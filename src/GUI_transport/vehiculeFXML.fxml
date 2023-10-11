@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="860.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI_transport.VehiculeFXMLController">
+    <stylesheets>
+        <URL value="@vehiculefxml.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="579.0" prefWidth="860.0">
+         <children>
+            <Label layoutX="308.0" layoutY="207.0" text="Matricule :" />
+            <Label layoutX="148.0" layoutY="336.0" text="Type véhicule :" />
+            <Label layoutX="512.0" layoutY="336.0" text="Marque : " />
+            <TextField fx:id="TxtMatV" layoutX="414.0" layoutY="202.0" prefHeight="31.0" prefWidth="116.0" />
+            <ComboBox fx:id="cmbTypeV" editable="true" layoutX="280.0" layoutY="331.0" prefWidth="150.0" />
+            <ComboBox fx:id="cmbMrqV" editable="true" layoutX="599.0" layoutY="331.0" prefWidth="150.0" />
+            <Button fx:id="btnEngV" layoutX="355.0" layoutY="465.0" mnemonicParsing="false" onAction="#btnEngV" prefHeight="47.0" prefWidth="168.0" text="Enregistrer" />
+            <Label layoutX="330.0" layoutY="77.0" text="Choisir un véhicule">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
