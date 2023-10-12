@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="633.0" prefWidth="1031.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.AffichageReservationController">
+   <children>
+      <AnchorPane prefHeight="633.0" prefWidth="1031.0">
+         <children>
+            <Label layoutX="381.0" layoutY="50.0" text="Affichage des réservations">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listviewres" layoutX="75.0" layoutY="184.0" prefHeight="308.0" prefWidth="703.0" />
+            <Button fx:id="afficherreservation" layoutX="859.0" layoutY="233.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Afficher" />
+            <Button fx:id="suppreservation" layoutX="866.0" layoutY="362.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="102.0" text="Supprimer" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
