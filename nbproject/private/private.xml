@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/BonPlans.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLUpdateBonPlanController.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLUpdateBonPlan.fxml</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/models/TypeBonPlan.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLAfficherBonPlansController.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/services/ServiceBonPLan.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLAfficherBonPlans.fxml</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/interfaces/IServiceBonPlan.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/models/BonPlan.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLBonPlanController.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLBonPlan.fxml</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/services/ServiceTypeBonPlan.java</file>
+        </group>
+    </open-files>
+</project-private>

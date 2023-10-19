@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="476.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.FXMLUpdateBonPlanController">
+   <children>
+      <TextField fx:id="txtFieldNameBonPlan" layoutX="199.0" layoutY="86.0" prefHeight="32.0" prefWidth="184.0" />
+      <Label layoutX="69.0" layoutY="92.0" text="Name bonPlan">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="143.0" text="Rating BonPlan">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFieldRatingBonPlan" layoutX="199.0" layoutY="137.0" prefHeight="32.0" prefWidth="184.0" />
+      <DatePicker fx:id="datePickerStartDate" layoutX="199.0" layoutY="184.0" prefHeight="32.0" prefWidth="184.0" />
+      <Label layoutX="112.0" layoutY="190.0" text="Start Date">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickerEndingDate" layoutX="199.0" layoutY="238.0" prefHeight="32.0" prefWidth="184.0" />
+      <Label layoutX="94.0" layoutY="244.0" text="Ending Date">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="82.0" layoutY="284.0" text="Average Price">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFieldAvgPrice" layoutX="199.0" layoutY="281.0" prefHeight="32.0" prefWidth="184.0" />
+      <Button fx:id="btnUpdate" layoutX="149.0" layoutY="390.0" mnemonicParsing="false" onAction="#updateBonPlan" prefHeight="53.0" prefWidth="115.0" text="Update" />
+      <Button layoutX="325.0" layoutY="389.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="115.0" text="Return" />
+      <Label layoutX="221.0" layoutY="26.0" text="Modifier Bon Plan ">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
