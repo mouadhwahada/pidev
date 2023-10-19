@@ -15,24 +15,40 @@ public class service {
     
     private String nom_service;
     private String description_service;
-    private double prix_service;
+    private int prix_service;
+    private int reference_se;
+
+  
     
       public service() {
     }
 
-    public service(int id_service, String nom_service, String description_service, double prix_service) {
+    public service(int id_service, String nom_service, String description_service, int prix_service,int reference_se) {
         this.id_service = id_service;
         this.nom_service = nom_service;
         this.description_service = description_service;
         this.prix_service = prix_service;
+        this.reference_se=reference_se;
     }
       
 
-    public service(String nom_service, String description_service, double prix_service) {
+    public service(String nom_service, String description_service, int prix_service,int reference_se) {
         this.nom_service = nom_service;
         this.description_service = description_service;
         this.prix_service = prix_service;
+         this.reference_se=reference_se;
     }
+
+  
+   
+    public void setReference_se(int reference_se) {
+        this.reference_se = reference_se;
+    }
+
+    public int getReference_se() {
+        return reference_se;
+    }
+    
 
     public int getId_service() {
         return id_service;
@@ -46,7 +62,7 @@ public class service {
         return description_service;
     }
 
-    public double getPrix_service() {
+    public int getPrix_service() {
         return prix_service;
     }
 
@@ -62,7 +78,7 @@ public class service {
         this.description_service = description_service;
     }
 
-    public void setPrix_service(double prix_service) {
+    public void setPrix_service(int prix_service) {
         this.prix_service = prix_service;
     }
 
@@ -92,7 +108,7 @@ public class service {
 
     @Override
     public String toString() {
-        return "service{" + "id_service=" + id_service + ", nom_service=" + nom_service + ", description_service=" + description_service + ", prix_service=" + prix_service + '}';
+        return "service{" + "id_service=" + id_service + ", nom_service=" + nom_service + ", description_service=" + description_service + ", prix_service=" + prix_service +  ", reference_se=" + reference_se + '}';
     }
     
     

@@ -8,6 +8,7 @@ package voyages.offres;
  import voyages.offres.service;
 import java.sql.Date;
 import java.time.LocalDate;
+import javafx.beans.property.SimpleStringProperty;
 
 
 /**
@@ -20,29 +21,31 @@ public class offres {
 
     private int réference;
     private String destination;
-    private LocalDate début;
-    private LocalDate fin;
-    private double prix;
-  private int id_service ;
-
+    private Date début;
+    private Date fin;
+    private int prix;
+    
+  private service Service ;
+ 
    
   
 
       public offres() {
     } 
 
-
-    public offres(String destination, LocalDate début, LocalDate fin, double prix,int réference ,int id_service ) {
+ 
+    public offres(String destination, Date début, Date fin, int prix,int réference ,service Service) {
        
         this.destination = destination;
         this.début = début;
         this.fin = fin;
         this.prix = prix;
          this.réference=réference;
-        this.id_service= id_service ;
-
+       this.Service=Service;
+      
     }
-     public offres(int id_offres, String destination, LocalDate début, LocalDate fin, double prix, int réference,int id_service ) {
+    
+     public offres(int id_offres, String destination, Date début, Date fin, int prix, int réference,service Service) {
         this.id_offres = id_offres;
         
         this.destination = destination;
@@ -50,18 +53,21 @@ public class offres {
         this.fin = fin;
         this.prix = prix;
          this.réference=réference;
-         this.id_service= id_service;
+         this.Service= Service;
+    }
+
+    public void setService(service Service) {
+        this.Service = Service;
     }
     
     
- public int getId_service() {
-        return id_service;
+
+
+    public service getService() {
+        return Service;
     }
 
-    public void setId_service(int id_service) {
-        this.id_service = id_service;
-    }
-
+  
   
    
 
@@ -74,15 +80,15 @@ public class offres {
     }
 
     
-    public LocalDate getFin() {
+    public Date getFin() {
         return fin;
     }
      
-    public LocalDate getDébut() {
+    public Date getDébut() {
         return fin;
     }
 
-    public double getPrix() {
+    public int getPrix() {
         return prix;
     }
     
@@ -95,15 +101,15 @@ public class offres {
         this.destination = destination;
     }
 
-    public void setDébut(LocalDate début) {
+    public void setDébut(Date début) {
         this.début = début;
     }
 
-    public void setFin( LocalDate fin) {
+    public void setFin( Date fin) {
         this.fin = fin;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
         public int getRéference() {
@@ -117,7 +123,7 @@ public class offres {
 
     @Override
     public String toString() {
-        return "offres{" + "id_offres=" + id_offres  + "réference=" + réference + ", destination=" + destination + ", début=" + début + ", fin=" + fin + ", prix=" + prix +",id_service="+id_service+ '}';
+        return "offres{" + "id_offres=" + id_offres  + "réference=" + réference + ", destination=" + destination + ", début=" + début + ", fin=" + fin + ", prix=" + prix +",Service="+Service+ '}';
     }
 
     @Override
@@ -143,6 +149,8 @@ public class offres {
         }
         return true;
     }
+
+   
 
    
     
