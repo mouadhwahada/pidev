@@ -17,7 +17,7 @@ public class Datasource {
      private Connection cnx;
     private static Datasource instance;
     
-    private String url = "jdbc:mysql://localhost:3306/reservations";
+    private String url = "jdbc:mysql://localhost:3306/gestion_reservations";
     private String user = "root";
     private String password = "";
     

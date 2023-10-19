@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="937.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.AffichageFactureController">
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionreservation.GUI.AffichageFactureController">
    <children>
       <AnchorPane prefHeight="590.0" prefWidth="937.0">
          <children>
@@ -16,9 +15,9 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <ListView fx:id="listfactures" layoutX="64.0" layoutY="155.0" prefHeight="333.0" prefWidth="576.0" />
+            <ListView fx:id="listfactures" layoutX="64.0" layoutY="155.0" onMouseClicked="#choisirfacture" prefHeight="333.0" prefWidth="576.0" />
             <Button fx:id="afficherfacture" layoutX="728.0" layoutY="194.0" mnemonicParsing="false" onAction="#afficherfacture" prefHeight="44.0" prefWidth="110.0" text="Afficher" />
-            <Button fx:id="suppfacture" layoutX="731.0" layoutY="341.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="116.0" text="Supprimer" />
+            <Button fx:id="suppfacture" layoutX="731.0" layoutY="341.0" mnemonicParsing="false" onAction="#suppfacture" prefHeight="44.0" prefWidth="116.0" text="Supprimer" />
          </children>
       </AnchorPane>
    </children>

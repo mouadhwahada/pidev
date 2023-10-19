@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,65 +33,80 @@ public class ServiceReservation implements interface_reservation {
     @Override
     public void ajouterReservation(Reservation res) {
         try {
-            String req = "INSERT INTO `reservations`(`dateDebut`, `dateFin`, `CinClient`, `nomClient`, `nombrePersonnes`, `typeHebergement`, `typeActivité`) VALUES ('" + res.getDateDebut() + "','" + res.getDateFin() +"','" + res.getCinClient() + "','" + res.getNomClient()+ "','"+ res.getNombrePersonnes() + "','" + res.getTypeHebergement() +"','" + res.getTypeActivite()+"')";
+            String req = "INSERT INTO `reservations`( `CinClient`, `nomclient`, `nombrePersonnes`, `dateDebut`, `dateFin`, `mode_paiement`, `typeHebergement`, `typeActivite`, `reference`) VALUES ('" +res.getCinClient() + "','" + res.getNomClient()+"','" + res.getNombrePersonnes()+ "','" + res.getDateDebut()+ "','"+ res.getDateFin() + "','" + res.getMode_paiement() +"','" + res.getTypeHebergement()+"','" + res.getTypeActivite()+"','" + res.getReference()+"')";
             
             Statement stm = cnx.createStatement();
             stm.executeUpdate(req);
-            System.out.println("succes d'ajout");
+            JOptionPane.showMessageDialog(null,
+    "Votre réservation à été ajoutée avec succès!");
             
         } catch (SQLException ex) {
-            System.out.println("echec d'ajout");
+           JOptionPane.showMessageDialog(null,
+    "Echec d'ajout!.", "Inane error",
+    JOptionPane.ERROR_MESSAGE);
         }
     }
     
      public void modifierReservation(Reservation r) {
-         String req = "UPDATE `reservations` SET `dateDebut`=?,`dateFin`=?,`CinClient`=?,`nomClient`=?,`nombrePersonnes`=?,`typeHebergement`=?,`typeActivité`=? WHERE `idReservation`=?";
+         String req = "UPDATE `reservations` SET `CinClient`=?,`nomclient`=?,`nombrePersonnes`=?,`dateDebut`=?,`dateFin`=?,`mode_paiement`=?,`typeHebergement`=?,`typeActivite`=? WHERE `reference`=?";
     try {
         PreparedStatement ps = cnx.prepareStatement(req);
        
         
-        ps.setDate(1, java.sql.Date.valueOf(r.getDateDebut())); // Convertir LocalDate en java.sql.Date
-        ps.setDate(2, java.sql.Date.valueOf(r.getDateFin()));
-        ps.setInt(3, r.getCinClient());
-        ps.setString(4, r.getNomClient());
-         ps.setInt(5, r.getNombrePersonnes());
-        ps.setString(6, r.getTypeHebergement());
-        ps.setString(7, r.getTypeActivite());
+       
+        ps.setInt(1, r.getCinClient());
+        ps.setString(2, r.getNomClient());
+         ps.setInt(3, r.getNombrePersonnes());
+          ps.setDate(4, r.getDateDebut()); 
+        ps.setDate(5, r.getDateFin());
+        ps.setString(6, r.getMode_paiement());
+        ps.setString(7, r.getTypeHebergement());
+        ps.setString(8, r.getTypeActivite());
+        
       
        
         // Assurez-vous d'obtenir l'ID de l'événement que vous souhaitez mettre à jour
        
-        ps.setInt(8, r.getIdReservation());
+        ps.setInt(9, r.getReference());
         int res = ps.executeUpdate();
 
         if (res== 0) {
-         System.out.println("modification echouée");
+        JOptionPane.showMessageDialog(null,
+    "modification echouée!.", "Inane error",
+    JOptionPane.ERROR_MESSAGE);
            
         } else {
-        System.out.println("modification avec succès");
+         JOptionPane.showMessageDialog(null,
+    "Votre réservation à été modifiée avec succès!");
+            
            
         }
     } catch (SQLException ex) {
-       System.out.println("echec!");
+      JOptionPane.showMessageDialog(null,
+    "Echec!.", "Inane error",
+    JOptionPane.ERROR_MESSAGE);
     }
    
    
      }
 
     @Override
-    public void supprimerReservation(int idreservation) {
+    public void supprimerReservation(int reference) {
        try{
-            String query ="DELETE FROM `reservations` WHERE `idReservation`=?";
+            String query ="DELETE FROM `reservations` WHERE `reference`=?";
            PreparedStatement  pst=cnx.prepareStatement(query);
-           pst.setInt(1, idreservation);
+           pst.setInt(1, reference);
            
            int r = pst.executeUpdate();
 
         if (r== 0) {
-         System.out.println("suppression echouée");
+          JOptionPane.showMessageDialog(null,
+    "Echec!.", "Inane error",
+    JOptionPane.ERROR_MESSAGE);
            
         } else {
-        System.out.println("suppression avec succès");
+       JOptionPane.showMessageDialog(null,
+    "Votre réservation à été supprimée avec succès!");
            
         }
     } catch (SQLException ex) {
@@ -112,21 +128,19 @@ public class ServiceReservation implements interface_reservation {
         
          r.setIdReservation(rs1.getInt("idReservation"));//(rs.getInt("id"));
          
-         // Convertir java.sql.Date en LocalDate
-        java.sql.Date dateDebutSQL = rs1.getDate("dateDebut");
-        LocalDate dateDebut = dateDebutSQL.toLocalDate();
-        r.setDateDebut(dateDebut);
-
-        // Convertir java.sql.Date en LocalDate pour la date de fin
-        java.sql.Date dateFinSQL = rs1.getDate("dateFin");
-        LocalDate dateFin = dateFinSQL.toLocalDate();
-        r.setDateFin(dateFin);
-                r.setCinClient(rs1.getInt("CinClient"));
+          r.setCinClient(rs1.getInt("CinClient"));
                 r.setNomClient(rs1.getString("nomClient"));
                 r.setNombrePersonnes(rs1.getInt("nombrePersonnes"));
-                r.setTypeHebergement(rs1.getString("typeHebergement"));
-                r.setTypeActivite(rs1.getString("typeActivité"));
+
+     
+        r.setDateDebut(rs1.getDate("dateDebut"));
+
        
+         r.setDateFin(rs1.getDate("dateFin"));
+         r.setMode_paiement("mode_paiement");
+                               r.setTypeHebergement(rs1.getString("typeHebergement"));
+                r.setTypeActivite(rs1.getString("typeActivite"));
+       r.setReference(rs1.getInt("reference"));
         // Assurez-vous d'obtenir l'ID de l'événement que vous souhaitezs mettre à jour
        
        

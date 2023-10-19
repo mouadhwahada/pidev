@@ -7,57 +7,56 @@ package gestion_reservation.entities;
 
 import java.time.LocalDate;
 import static java.time.temporal.TemporalQueries.localDate;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
+import javafx.scene.control.DatePicker;
 
 /**
  *
  * @author pc
  */
 public class Reservation {
-     private int idReservation;
-    private  LocalDate dateDebut;
-    private  LocalDate dateFin;
+    private int idReservation;
     private int CinClient;
     private String nomClient;
     private int nombrePersonnes;
+    private  Date dateDebut;
+    private  Date dateFin;
+    private String mode_paiement;
     private String typeHebergement;
     private String typeActivite;
+    private int reference;
 
     public Reservation() {
     }
 
-    public Reservation( LocalDate dateDebut, LocalDate dateFin, int CinClient, String nomClient, int nombrePersonnes, String typeHebergement, String typeActivite) {
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.CinClient = CinClient;
-        this.nomClient = nomClient;
-        this.nombrePersonnes = nombrePersonnes;
-        this.typeHebergement = typeHebergement;
-        this.typeActivite = typeActivite;
-    }
-   
-    public Reservation(int idReservation,  LocalDate dateDebut,  LocalDate dateFin, int CinClient, String nomClient, int nombrePersonnes, String typeHebergement, String typeActivite) {
+    public Reservation(int idReservation, int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int reference) {
         this.idReservation = idReservation;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
         this.CinClient = CinClient;
         this.nomClient = nomClient;
         this.nombrePersonnes = nombrePersonnes;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.mode_paiement = mode_paiement;
         this.typeHebergement = typeHebergement;
         this.typeActivite = typeActivite;
+        this.reference = reference;
+    }
+
+    public Reservation(int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int reference) {
+        this.CinClient = CinClient;
+        this.nomClient = nomClient;
+        this.nombrePersonnes = nombrePersonnes;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.mode_paiement = mode_paiement;
+        this.typeHebergement = typeHebergement;
+        this.typeActivite = typeActivite;
+        this.reference = reference;
     }
 
     public int getIdReservation() {
         return idReservation;
-    }
-
-    public  LocalDate getDateDebut() {
-        return dateDebut;
-    }
-
-    public  LocalDate getDateFin() {
-        return dateFin;
     }
 
     public int getCinClient() {
@@ -72,6 +71,18 @@ public class Reservation {
         return nombrePersonnes;
     }
 
+    public Date getDateDebut() {
+        return dateDebut;
+    }
+
+    public Date getDateFin() {
+        return dateFin;
+    }
+
+    public String getMode_paiement() {
+        return mode_paiement;
+    }
+
     public String getTypeHebergement() {
         return typeHebergement;
     }
@@ -80,16 +91,12 @@ public class Reservation {
         return typeActivite;
     }
 
+    public int getReference() {
+        return reference;
+    }
+
     public void setIdReservation(int idReservation) {
         this.idReservation = idReservation;
-    }
-
-    public void setDateDebut( LocalDate dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public void setDateFin( LocalDate dateFin) {
-        this.dateFin = dateFin;
     }
 
     public void setCinClient(int CinClient) {
@@ -104,6 +111,18 @@ public class Reservation {
         this.nombrePersonnes = nombrePersonnes;
     }
 
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
+    }
+
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
+
+    public void setMode_paiement(String mode_paiement) {
+        this.mode_paiement = mode_paiement;
+    }
+
     public void setTypeHebergement(String typeHebergement) {
         this.typeHebergement = typeHebergement;
     }
@@ -112,17 +131,23 @@ public class Reservation {
         this.typeActivite = typeActivite;
     }
 
+    public void setReference(int reference) {
+        this.reference = reference;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 37 * hash + this.idReservation;
-        hash = 37 * hash + Objects.hashCode(this.dateDebut);
-        hash = 37 * hash + Objects.hashCode(this.dateFin);
-        hash = 37 * hash + this.CinClient;
-        hash = 37 * hash + Objects.hashCode(this.nomClient);
-        hash = 37 * hash + this.nombrePersonnes;
-        hash = 37 * hash + Objects.hashCode(this.typeHebergement);
-        hash = 37 * hash + Objects.hashCode(this.typeActivite);
+        int hash = 7;
+        hash = 97 * hash + this.idReservation;
+        hash = 97 * hash + this.CinClient;
+        hash = 97 * hash + Objects.hashCode(this.nomClient);
+        hash = 97 * hash + this.nombrePersonnes;
+        hash = 97 * hash + Objects.hashCode(this.dateDebut);
+        hash = 97 * hash + Objects.hashCode(this.dateFin);
+        hash = 97 * hash + Objects.hashCode(this.mode_paiement);
+        hash = 97 * hash + Objects.hashCode(this.typeHebergement);
+        hash = 97 * hash + Objects.hashCode(this.typeActivite);
+        hash = 97 * hash + Objects.hashCode(this.reference);
         return hash;
     }
 
@@ -150,10 +175,16 @@ public class Reservation {
         if (!Objects.equals(this.nomClient, other.nomClient)) {
             return false;
         }
+        if (!Objects.equals(this.mode_paiement, other.mode_paiement)) {
+            return false;
+        }
         if (!Objects.equals(this.typeHebergement, other.typeHebergement)) {
             return false;
         }
         if (!Objects.equals(this.typeActivite, other.typeActivite)) {
+            return false;
+        }
+        if (!Objects.equals(this.reference, other.reference)) {
             return false;
         }
         if (!Objects.equals(this.dateDebut, other.dateDebut)) {
@@ -164,19 +195,11 @@ public class Reservation {
         }
         return true;
     }
-    
+
+    @Override
     public String toString() {
-    return "Reservation{" +
-           "idReservation=" + idReservation +
-           ", dateDebut=" + dateDebut +
-           ", dateFin=" + dateFin +
-           ", cinClient=" + CinClient +
-           ", nomClient='" + nomClient + '\'' +
-           ", nombrePersonnes=" + nombrePersonnes +
-           ", typeHebergement='" + typeHebergement + '\'' +
-           ", typeActivite='" + typeActivite + '\'' +
-           '}';
-}
+        return "Reservation{" + "idReservation=" + idReservation + ", CinClient=" + CinClient + ", nomClient=" + nomClient + ", nombrePersonnes=" + nombrePersonnes + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", mode_paiement=" + mode_paiement + ", typeHebergement=" + typeHebergement + ", typeActivite=" + typeActivite + ", reference=" + reference + '}';
+    }
 
     
 }

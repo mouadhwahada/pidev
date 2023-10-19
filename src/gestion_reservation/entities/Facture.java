@@ -14,43 +14,38 @@ import java.util.Objects;
  */
 public class Facture {
      private int idfacture;
+     private int numfacture;
     private double montant;
     private String datePaiement;
-    private String modePaiement;
-    private int ref_facture;
-    private int idReservation;
+    
+    private Reservation Reservation;
 
     public Facture() {
     }
 
-    public Facture(int idfacture, double montant, String datePaiement, String modePaiement, int ref_facture, int idReservation) {
+    public Facture(int idfacture, int numfacture, double montant, String datePaiement, Reservation Reservation) {
         this.idfacture = idfacture;
+        this.numfacture = numfacture;
         this.montant = montant;
         this.datePaiement = datePaiement;
-        this.modePaiement = modePaiement;
-        this.ref_facture = ref_facture;
-        this.idReservation = idReservation;
+        this.Reservation = Reservation;
     }
 
-    public Facture(double montant, String datePaiement, String modePaiement, int ref_facture, int idReservation) {
+    public Facture(int numfacture, double montant, String datePaiement, Reservation Reservation) {
+        this.numfacture = numfacture;
         this.montant = montant;
         this.datePaiement = datePaiement;
-        this.modePaiement = modePaiement;
-        this.ref_facture = ref_facture;
-        this.idReservation = idReservation;
+        this.Reservation = Reservation;
     }
-    
-   
-   
-     
-    
 
     public int getIdfacture() {
         return idfacture;
     }
-    public int getRef_facture() {
-        return ref_facture;
+
+    public int getNumfacture() {
+        return numfacture;
     }
+
     public double getMontant() {
         return montant;
     }
@@ -59,19 +54,16 @@ public class Facture {
         return datePaiement;
     }
 
-    public String getModePaiement() {
-        return modePaiement;
+    public Reservation getReservation() {
+        return Reservation;
     }
-
-    public int getIdReservation() {
-        return idReservation;
-    }
-    
-
-   
 
     public void setIdfacture(int idfacture) {
         this.idfacture = idfacture;
+    }
+
+    public void setNumfacture(int numfacture) {
+        this.numfacture = numfacture;
     }
 
     public void setMontant(double montant) {
@@ -82,28 +74,18 @@ public class Facture {
         this.datePaiement = datePaiement;
     }
 
-    public void setModePaiement(String modePaiement) {
-        this.modePaiement = modePaiement;
+    public void setReservation(Reservation Reservation) {
+        this.Reservation = Reservation;
     }
-    public void setRef_facture(int ref_facture) {
-        this.ref_facture = ref_facture;
-    }
-
-    public void setIdReservation(int idReservation) {
-        this.idReservation = idReservation;
-    }
-
-    
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 59 * hash + this.idfacture;
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.montant) ^ (Double.doubleToLongBits(this.montant) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.datePaiement);
-        hash = 59 * hash + Objects.hashCode(this.modePaiement);
-        hash = 59 * hash + Objects.hashCode(this.idReservation);
-        hash = 59 * hash + this.ref_facture;
+        int hash = 7;
+        hash = 17 * hash + this.idfacture;
+        hash = 17 * hash + this.numfacture;
+        hash = 17 * hash + (int) (Double.doubleToLongBits(this.montant) ^ (Double.doubleToLongBits(this.montant) >>> 32));
+        hash = 17 * hash + Objects.hashCode(this.datePaiement);
+        hash = 17 * hash + Objects.hashCode(this.Reservation);
         return hash;
     }
 
@@ -122,19 +104,16 @@ public class Facture {
         if (this.idfacture != other.idfacture) {
             return false;
         }
-        if (Double.doubleToLongBits(this.montant) != Double.doubleToLongBits(other.montant)) {
+        if (this.numfacture != other.numfacture) {
             return false;
         }
-        if (this.ref_facture != other.ref_facture) {
+        if (Double.doubleToLongBits(this.montant) != Double.doubleToLongBits(other.montant)) {
             return false;
         }
         if (!Objects.equals(this.datePaiement, other.datePaiement)) {
             return false;
         }
-        if (!Objects.equals(this.modePaiement, other.modePaiement)) {
-            return false;
-        }
-        if (!Objects.equals(this.idReservation, other.idReservation)) {
+        if (!Objects.equals(this.Reservation, other.Reservation)) {
             return false;
         }
         return true;
@@ -142,8 +121,12 @@ public class Facture {
 
     @Override
     public String toString() {
-        return "Facture{" + "idfacture=" + idfacture + ", montant=" + montant + ", datePaiement=" + datePaiement + ", modePaiement=" + modePaiement + ", ref_facture=" + ref_facture + ", idReservation=" + idReservation + '}';
+        return "Facture{" + "idfacture=" + idfacture + ", numfacture=" + numfacture + ", montant=" + montant + ", datePaiement=" + datePaiement + ", Reservation=" + Reservation + '}';
     }
+
+   
+
+   
 
    
     

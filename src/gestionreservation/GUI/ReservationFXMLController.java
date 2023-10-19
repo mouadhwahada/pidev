@@ -24,6 +24,8 @@ import gestion_reservation.entities.Facture;
 import gestion_reservation.entities.Reservation;
 import java.time.LocalDate;
 import javafx.scene.control.Button;
+import java.sql.Date;
+
 
 /**
  * FXML Controller class
@@ -69,14 +71,17 @@ public class ReservationFXMLController implements Initializable {
     @FXML
     private void buttajoutres(ActionEvent event) {
         ServiceReservation res1 = new ServiceReservation();
-         LocalDate localDate1 = LocalDate.parse(dateres1.getValue().toString());
-         LocalDate localDate2 = LocalDate.parse(dateres2.getValue().toString());
+        String datereservation1 = dateres1.getValue().toString();
+        String datereservation2 = dateres2.getValue().toString();
+        Date sqlDate1 = Date.valueOf(datereservation1);
+        Date sqlDate2 = Date.valueOf(datereservation2);
+         
          String Cinclientres=cinclientres.getText();
         int Cinclientres1=Integer.parseInt(Cinclientres);
         String nombreperso=nbperres.getText();
         int nbperresValue=Integer.parseInt(nombreperso);
         
-         res1.ajouterReservation(new Reservation(localDate1,localDate2,Cinclientres1,nomreservation.getText(),nbperresValue,typeheberres.getSelectionModel().getSelectedItem().toString(),typeacres.getSelectionModel().getSelectedItem().toString()));
+         res1.ajouterReservation(new Reservation(sqlDate1,sqlDate2,Cinclientres1,nomreservation.getText(),nbperresValue,typeheberres.getSelectionModel().getSelectedItem().toString(),typeacres.getSelectionModel().getSelectedItem().toString()));
     }
      
      

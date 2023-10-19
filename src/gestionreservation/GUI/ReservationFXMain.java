@@ -5,6 +5,7 @@
  */
 package gestionreservation.GUI;
 
+import java.awt.Image;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,18 +26,20 @@ import javafx.stage.Stage;
 public class ReservationFXMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-       try {
-           /* Parent root = FXMLLoader.load(getClass().getResource("ReservationFXML.fxml"));
+    public void start(Stage primaryStage) throws IOException {
+      try {
+         Parent root = FXMLLoader.load(getClass().getResource("acceuilres.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Réservation");
+            primaryStage.setTitle("Acceuil");
+
             primaryStage.show();
         
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        }*/
-       /*Parent root = FXMLLoader.load(getClass().getResource("AjoutFacture.fxml"));
+        }
+           
+   /*  Parent root = FXMLLoader.load(getClass().getResource("factureajout.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Ajout Facture");
@@ -45,17 +48,44 @@ public class ReservationFXMain extends Application {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }*/
-       Parent root = FXMLLoader.load(getClass().getResource("AffichageFacture.fxml"));
+  /*Parent root = FXMLLoader.load(getClass().getResource("factureaffichage.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Liste des factures");
             primaryStage.show();
         
         } catch (IOException ex) {
+            System.out.println(ex.getMessage());}*/
+   /*Parent root = FXMLLoader.load(getClass().getResource("modifresFXML.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("modification");
+            primaryStage.show();
+        
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        }
-    }
+        }*/
+  /*  Parent root = FXMLLoader.load(getClass().getResource("affichageReservation.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Liste des réservations");
+            primaryStage.show();
+        
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
 
+    }*/
+    /*Parent root = FXMLLoader.load(getClass().getResource("modiffacture.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Mise à jour des factures");
+            primaryStage.show();
+        
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());}
+*/
+    
+      }
     /**
      * @param args the command line arguments
      */

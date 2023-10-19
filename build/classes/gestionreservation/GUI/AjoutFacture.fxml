@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="965.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.AjoutFactureController">
+<AnchorPane id="AnchorPane" prefHeight="629.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionreservation.GUI.AjoutFactureController">
    <children>
       <AnchorPane prefHeight="629.0" prefWidth="965.0">
          <children>
@@ -25,8 +24,6 @@
             <DatePicker fx:id="datepaiementres" layoutX="715.0" layoutY="173.0" />
             <Label layoutX="578.0" layoutY="284.0" text="Référence " />
             <TextField fx:id="reffact" layoutX="715.0" layoutY="274.0" />
-            <Label layoutX="82.0" layoutY="398.0" prefHeight="31.0" prefWidth="154.0" text="Identifiant réservation" />
-            <TextField fx:id="idresfact" layoutX="245.0" layoutY="398.0" />
             <Button fx:id="conffacture" layoutX="683.0" layoutY="471.0" mnemonicParsing="false" onAction="#conffacture" prefHeight="77.0" prefWidth="127.0" text="Confirmer" />
          </children>
       </AnchorPane>

@@ -1,25 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="633.0" prefWidth="1031.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.AffichageReservationController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.AffichageReservationController">
+    <stylesheets>
+        <URL value="@affichagereservation.css" />
+    </stylesheets>
    <children>
-      <AnchorPane prefHeight="633.0" prefWidth="1031.0">
+      <Pane layoutX="919.0" prefHeight="750.0" prefWidth="281.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label layoutX="381.0" layoutY="50.0" text="Affichage des réservations">
+            <ImageView fitHeight="170.0" fitWidth="306.0" layoutX="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture%20d'écran%202023-10-17%20211648.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="71.0" layoutY="157.0" prefHeight="31.0" prefWidth="138.0" text="Explore X" textFill="#2a2757">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Impact" size="36.0" />
                </font>
             </Label>
-            <ListView fx:id="listviewres" layoutX="75.0" layoutY="184.0" prefHeight="308.0" prefWidth="703.0" />
-            <Button fx:id="afficherreservation" layoutX="859.0" layoutY="233.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Afficher" />
-            <Button fx:id="suppreservation" layoutX="866.0" layoutY="362.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="102.0" text="Supprimer" />
+            <Button fx:id="modifierreservation" layoutX="62.0" layoutY="302.0" mnemonicParsing="false" onAction="#modifierreservation" prefHeight="73.0" prefWidth="181.0" text="Modifier">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="suppreservation" layoutX="71.0" layoutY="575.0" mnemonicParsing="false" onAction="#suppreservation" prefHeight="67.0" prefWidth="174.0" text="Supprimer">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@7078080.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="actualiserres" layoutX="66.0" layoutY="427.0" mnemonicParsing="false" onAction="#actualiserres" prefHeight="73.0" prefWidth="174.0" text="Actualiser">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@4856659.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
-      </AnchorPane>
+      </Pane>
+      <Label layoutX="266.0" layoutY="37.0" prefHeight="92.0" prefWidth="498.0" text="Liste des Réservations">
+         <font>
+            <Font name="Juice ITC" size="72.0" />
+         </font>
+      </Label>
+      <ListView fx:id="Listereservation" layoutX="45.0" layoutY="173.0" prefHeight="485.0" prefWidth="844.0" />
+      <Button fx:id="acceuilres" layoutX="24.0" layoutY="9.0" mnemonicParsing="false" onAction="#accueilres" prefHeight="62.0" prefWidth="68.0" style="-fx-background-color: #F0F8FF;">
+         <graphic>
+            <ImageView fitHeight="46.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@111-1110976_blue-home-icon-hd-png-download.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="returnajout" layoutX="840.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnajout" prefHeight="62.0" prefWidth="70.0" />
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="852.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@2099190.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

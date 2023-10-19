@@ -8,7 +8,7 @@ package gestionreservation.GUI;
 import gestion_reservation.entities.Reservation;
 import gestion_reservation.services.ServiceReservation;
 import java.net.URL;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,24 +30,14 @@ public class ReservationmodifController implements Initializable {
     /**
      * Initializes the controller class.
      */
-      @FXML 
      private TextField idreservat;
-     @FXML
     private TextField cinclientresmodif;
-      @FXML
     private TextField nomresmodif;
-    @FXML
-    private DatePicker datedmodif;
-    @FXML
+    private DatePicker datedebmodif;
     private DatePicker datefmodif;
-    @FXML
     private TextField nbperresmodif;
-    @FXML
     private ComboBox typeheberresmodif;
-    @FXML
     private ComboBox typeacresmodif;
-     @FXML
-    private Button buttonsauvmodif;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -58,6 +48,31 @@ public class ReservationmodifController implements Initializable {
         typeacresmodif.setItems(list1);
     }   
     
-    
+     private void buttonSauvmodif(ActionEvent event) {
+     String datereservation1 = datedebmodif.getValue().toString();
+        String datereservation2 = datefmodif.getValue().toString();
+        Date sqlDate11 = Date.valueOf(datereservation1);
+        Date sqlDate22= Date.valueOf(datereservation2);
+        String id3Text = idreservat.getText();
+        int idres1 = Integer.parseInt(id3Text);
+        ServiceReservation serviceReservation = new ServiceReservation();
+        Reservation reservation = new Reservation();
+
+        Date dateDebut = java.sql.Date.valueOf(datedebmodif.getValue());
+        Date dateFin = java.sql.Date.valueOf(datefmodif.getValue());
+
+        reservation.setDateDebut(dateDebut);
+        reservation.setDateFin(dateFin);
+        reservation.setCinClient(Integer.parseInt(cinclientresmodif.getText()));
+reservation.setNomClient(nomresmodif.getText());
+reservation.setNombrePersonnes(Integer.parseInt(nbperresmodif.getText()));
+reservation.setTypeHebergement(typeheberresmodif.getSelectionModel().getSelectedItem().toString());
+reservation.setTypeActivite(typeacresmodif.getSelectionModel().getSelectedItem().toString());
+reservation.setIdReservation(idres1);
+
+serviceReservation.modifierReservation(reservation);
+       
+     }
+     
      
 }

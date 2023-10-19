@@ -36,8 +36,7 @@ public class AjoutFactureController implements Initializable {
     private TextField modepfact;
      @FXML
     private TextField reffact;
-     @FXML
-    private TextField idresfact;
+     
      @FXML
     private Button conffacture;
     @Override
@@ -46,16 +45,30 @@ public class AjoutFactureController implements Initializable {
     }    
     @FXML
     private void conffacture(ActionEvent event) {
+       /* ServiceFacture facture = new ServiceFacture();
+         String Montantfact=montantfact.getText();
+        double Montantf=Double.parseDouble(Montantfact);
+        String datepaiement=datepaiementres.getValue().toString();
+        String reference=reffact.getText();
+        
+        int referenceValue=Integer.parseInt(reference);
+        //String idres=idresfact.getText();
+       // int id_res=Integer.parseInt(idres);
+        
+         facture.ajouterFacture(new Facture(Montantf,datepaiement,modepfact.getText(),referenceValue));*/
+        //private void conffacture(ActionEvent event) {
         ServiceFacture facture = new ServiceFacture();
          String Montantfact=montantfact.getText();
         double Montantf=Double.parseDouble(Montantfact);
         String datepaiement=datepaiementres.getValue().toString();
         String reference=reffact.getText();
-        int referenceValue=Integer.parseInt(reference);
-        String idres=idresfact.getText();
-        int id_res=Integer.parseInt(idres);
         
-         facture.ajouterFacture(new Facture(Montantf,datepaiement,modepfact.getText(),referenceValue,id_res));
+        int referenceValue=Integer.parseInt(reference);
+        //String idres=idresfact.getText();
+       // int id_res=Integer.parseInt(idres);
+        
+         facture.ajouterFacture(new Facture(Montantf,datepaiement,modepfact.getText(),referenceValue));
+    }
     }
     
-}
+
