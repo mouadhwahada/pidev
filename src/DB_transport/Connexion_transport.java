@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Connexion_transport {
      //DB Credentials
-    final String URL = "jdbc:mysql://localhost:3306/gestion_transport";
+    final String URL = "jdbc:mysql://localhost:3306/gestiontransport";
     final String USR = "root";
     final String PWD = "";
     

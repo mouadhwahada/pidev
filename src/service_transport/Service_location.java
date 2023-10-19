@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import entities_transport.Location_vehicule;
+import entities_transport.Vehicule;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -29,25 +30,26 @@ public class Service_location implements IService_location{
 
     @Override
     public void ajouter_transport(Location_vehicule lv) {
-        String req = "INSERT INTO `location_vehicule`(`cin_client_vehicule`, `Duree_loc_vehicule`, `pickup_vehicule`, `return_vehicule`, `id_vehicule`) VALUES (?,?,?,?,?)";
+        String req = "INSERT INTO `location_vehicule`(`ref_location`, `cin_client_vehicule`, `Duree_loc_vehicule`, `pickup_vehicule`, `return_vehicule`, `matriculeVehicule`) VALUES (?,?,?,?,?,?)";
         try {
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, lv.getCin_client_vehicule());
-            ps.setString(2, lv.getDuree_loc_vehicule());
-            ps.setString(3, lv.getPickup_vehicule());
-            ps.setString(4, lv.getReturn_vehicule());
-            ps.setInt(5, lv.getId_vehicle());
+            ps.setInt(1, lv.getRefLoc());
+            ps.setInt(2, lv.getCin_client_vehicule());
+            ps.setString(3, lv.getDuree_loc_vehicule());
+            ps.setString(4, lv.getPickup_vehicule());
+            ps.setString(5, lv.getReturn_vehicule());
+            ps.setInt(6, lv.getVehicule().getMatriculeV());
 
             ps.executeUpdate();
-            System.out.println("Location ajoutée avec succes!");
+           JOptionPane.showMessageDialog(null, "Location ajoutée avec succès!");
         } catch (SQLException ex) {
-            System.out.println("Ajout echoué!");
+            JOptionPane.showMessageDialog(null, "Ajout echoué!");
         } 
     }
 
     @Override
     public void modifier_transport(Location_vehicule lv) {
-         String req = "UPDATE `location_vehicule` SET `cin_client_vehicule`=?,`Duree_loc_vehicule`=?,`pickup_vehicule`=?,`return_vehicule`=?, `id_vehicule`=? WHERE `id_loc_vehicule`=?";
+         String req = "UPDATE `location_vehicule` SET `cin_client_vehicule`=?,`Duree_loc_vehicule`=?,`pickup_vehicule`=?,`return_vehicule`=?, `matriculeVehicule`=? WHERE `ref_location`=?";
     try {
         PreparedStatement ps = cnx.prepareStatement(req);
        
@@ -55,42 +57,42 @@ public class Service_location implements IService_location{
         ps.setString(2, lv.getDuree_loc_vehicule());
         ps.setString(3, lv.getPickup_vehicule());
         ps.setString(4, lv.getReturn_vehicule());
-        ps.setInt(5, lv.getId_vehicle());
+        ps.setInt(5, lv.getVehicule().getMatriculeV());
 
        
         // Assurez-vous d'obtenir l'ID de l'événement que vous souhaitez mettre à jour
-        ps.setInt(6, lv.getId_loc_vehicule());
+        ps.setInt(6, lv.getRefLoc());
        
         int res = ps.executeUpdate();
 
         if (res== 0) {
-        System.out.println("Location avec ID " + lv.getId_loc_vehicule() + " n'existe pas");
+        JOptionPane.showMessageDialog(null, "Location avec référence " + lv.getRefLoc() + " n'existe pas");
            
         } else {
-       System.out.println("Location avec ID " + lv.getId_loc_vehicule() + " est modifiée avec succès!");
+       JOptionPane.showMessageDialog(null, "Location avec référence " + lv.getRefLoc() + " est modifiée avec succès!");
            
         }
     } catch (SQLException ex) {
-        System.out.println("Modification echouée");
+        JOptionPane.showMessageDialog(null, "Modification echouée");
     }
 
     }
-    public void supprimer_transport(int id_location) {
+    public void supprimer_transport(int reference_location) {
         
-        String req = "DELETE FROM `location_vehicule` WHERE `id_loc_vehicule`=?";
+        String req = "DELETE FROM `location_vehicule` WHERE `ref_location`=?";
             try{
                 
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, id_location);
+            ps.setInt(1, reference_location);
             
            int res =ps.executeUpdate();
            if(res==0){
-                System.out.println("Suppression echouée");
+                JOptionPane.showMessageDialog(null, "Suppression echouée");
            }
-           else{System.out.println("Supprimé avec succès");
+           else{JOptionPane.showMessageDialog(null, "Supprimé avec succès");
            }        
         }catch(Exception ex){
-                System.out.println("Echec");
+                JOptionPane.showMessageDialog(null, "Echec");
         }
     }
     
@@ -105,12 +107,14 @@ public class Service_location implements IService_location{
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 Location_vehicule lv = new Location_vehicule();
-                lv.setId_loc_vehicule(rs.getInt("id_loc_vehicule"));
+                lv.setRefLoc(rs.getInt("ref_location"));
                 lv.setCin_client_vehicule(rs.getInt("cin_client_vehicule"));
                 lv.setDuree_loc_vehicule(rs.getString("duree_loc_vehicule"));
                 lv.setPickup_vehicule(rs.getString("pickup_vehicule"));
                 lv.setReturn_vehicule(rs.getString("return_vehicule"));
-                lv.setId_vehicle(rs.getInt("id_vehicule"));
+                Vehicule v = new Vehicule();
+                v.setMatriculeV(rs.getInt("matriculeVehicule"));
+                lv.setVehicule(v);
 
                 locations.add(lv);
                 System.out.println(lv);

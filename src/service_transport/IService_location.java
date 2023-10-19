@@ -6,6 +6,7 @@
 package service_transport;
 
 import entities_transport.Location_vehicule;
+import entities_transport.Vehicule;
 import java.util.List;
 
 

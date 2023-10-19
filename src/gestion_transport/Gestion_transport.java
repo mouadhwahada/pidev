@@ -29,9 +29,8 @@ public class Gestion_transport {
     public static void main(String[] args) {
         // TODO code application logic here
         Connexion_transport.getInstance();
-        //Location_vehicule lv = new Location_vehicule(5896,"5 jours","1 avril","5 avril",4);
-        Service_location sl = new Service_location();
-        sl.afficher_Location();
+        //Location_vehicule lv = new Location_vehicule(1478965,"5 jours","1 avril","5 avril",4);
+        
         //sl.ajouter_transport(lv);
         //Location_vehicule lv1 = new Location_vehicule(12,5536,"25 jours","3 mai","27 mai",2);
         //Service_location sl1 = new Service_location();
@@ -47,7 +46,14 @@ public class Gestion_transport {
        // sv.ajouter_vehicule(v);
       // sv.supprimer_vehicule(3);
        //sv.afficher_vehicule();
-
-    }
+       Vehicule vehicule = new Vehicule("Voiture", "bm", 9632);
+       Service_vehicule sv = new Service_vehicule();
+       sv.afficher_vehicule();
+       
+       
+     /* Location_vehicule location = new Location_vehicule(140271,147896, "10 jours", "10 avril", "20 avril", vehicule);
+      Service_location sl = new Service_location();
+       sl.afficher_Location();*/
     
+}
 }

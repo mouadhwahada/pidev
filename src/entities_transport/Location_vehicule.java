@@ -15,55 +15,51 @@ import service_transport.Service_location;
  */
 public class Location_vehicule {
     private int id_loc_vehicule;
+    private int refLoc;
     private int cin_client_vehicule;
     private String duree_loc_vehicule;
     private String pickup_vehicule;
     private String return_vehicule;
-    private int id_vehicle;
+    private Vehicule vehicule;
 
     public Location_vehicule() {
     }
 
-    public Location_vehicule(int id_loc_vehicule, int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule, int id_vehicle) {
+    public Location_vehicule(int id_loc_vehicule, int refLoc, int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule, Vehicule vehicule) {
         this.id_loc_vehicule = id_loc_vehicule;
+        this.refLoc = refLoc;
         this.cin_client_vehicule = cin_client_vehicule;
         this.duree_loc_vehicule = duree_loc_vehicule;
         this.pickup_vehicule = pickup_vehicule;
         this.return_vehicule = return_vehicule;
-        this.id_vehicle = id_vehicle;
+        this.vehicule = vehicule;
     }
 
-    public Location_vehicule(int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule, int id_vehicle) {
+    public Location_vehicule(int refLoc, int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule, Vehicule vehicule) {
+        this.refLoc = refLoc;
         this.cin_client_vehicule = cin_client_vehicule;
         this.duree_loc_vehicule = duree_loc_vehicule;
         this.pickup_vehicule = pickup_vehicule;
         this.return_vehicule = return_vehicule;
-        this.id_vehicle = id_vehicle;
+        this.vehicule = vehicule;
     }
 
     
-  
-
-    public Location_vehicule(int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule) {
-        this.cin_client_vehicule = cin_client_vehicule;
-        this.duree_loc_vehicule = duree_loc_vehicule;
-        this.pickup_vehicule = pickup_vehicule;
-        this.return_vehicule = return_vehicule;
-    }
-
-    public Location_vehicule(int id_loc_vehicule, int cin_client_vehicule, String duree_loc_vehicule, String pickup_vehicule, String return_vehicule) {
-        this.id_loc_vehicule = id_loc_vehicule;
-        this.cin_client_vehicule = cin_client_vehicule;
-        this.duree_loc_vehicule = duree_loc_vehicule;
-        this.pickup_vehicule = pickup_vehicule;
-        this.return_vehicule = return_vehicule;
-    }
    
 
-
+    public Vehicule getVehicule(){
+    return vehicule;
+    }
+    
+    
     public int getId_loc_vehicule() {
         return id_loc_vehicule;
     }
+
+    public int getRefLoc() {
+        return refLoc;
+    }
+    
 
     public int getCin_client_vehicule() {
         return cin_client_vehicule;
@@ -80,14 +76,17 @@ public class Location_vehicule {
     public String getReturn_vehicule() {
         return return_vehicule;
     }
-     public int getId_vehicle() {
-        return id_vehicle;
-    }
-  
 
+   
+    
     public void setId_loc_vehicule(int id_loc_vehicule) {
         this.id_loc_vehicule = id_loc_vehicule;
     }
+
+    public void setRefLoc(int refLoc) {
+        this.refLoc = refLoc;
+    }
+    
 
     public void setCin_client_vehicule(int cin_client_vehicule) {
         this.cin_client_vehicule = cin_client_vehicule;
@@ -104,62 +103,24 @@ public class Location_vehicule {
     public void setReturn_vehicule(String return_vehicule) {
         this.return_vehicule = return_vehicule;
     }
-    public void setId_vehicle(int id_vehicle) {
-        this.id_vehicle = id_vehicle;
+    public void setVehicule(Vehicule vehicule){
+        this.vehicule=vehicule;
     }
-
 
     @Override
     public String toString() {
-        return "Location_vehicule{" + "id_loc_vehicule=" + id_loc_vehicule + ", cin_client_vehicule=" + cin_client_vehicule + ", duree_loc_vehicule=" + duree_loc_vehicule + ", pickup_vehicule=" + pickup_vehicule + ", return_vehicule=" + return_vehicule + ", id_vehicle=" + id_vehicle + '}';
+        return "Location_vehicule{" + "id_loc_vehicule=" + id_loc_vehicule + ", refLoc=" + refLoc + ", cin_client_vehicule=" + cin_client_vehicule + ", duree_loc_vehicule=" + duree_loc_vehicule + ", pickup_vehicule=" + pickup_vehicule + ", return_vehicule=" + return_vehicule + ", vehicule=" + vehicule + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + this.id_loc_vehicule;
-        hash = 41 * hash + this.cin_client_vehicule;
-        hash = 41 * hash + Objects.hashCode(this.duree_loc_vehicule);
-        hash = 41 * hash + Objects.hashCode(this.pickup_vehicule);
-        hash = 41 * hash + Objects.hashCode(this.return_vehicule);
-        hash = 41 * hash + this.id_vehicle;
-        return hash;
-    }
+    
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location_vehicule other = (Location_vehicule) obj;
-        if (this.id_loc_vehicule != other.id_loc_vehicule) {
-            return false;
-        }
-        if (this.cin_client_vehicule != other.cin_client_vehicule) {
-            return false;
-        }
-        if (this.id_vehicle != other.id_vehicle) {
-            return false;
-        }
-        if (!Objects.equals(this.duree_loc_vehicule, other.duree_loc_vehicule)) {
-            return false;
-        }
-        if (!Objects.equals(this.pickup_vehicule, other.pickup_vehicule)) {
-            return false;
-        }
-        if (!Objects.equals(this.return_vehicule, other.return_vehicule)) {
-            return false;
-        }
-        return true;
-    }
+   
 
- 
+   
+
+
+   
+   
 
    
 }

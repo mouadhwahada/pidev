@@ -5,6 +5,7 @@
  */
 package entities_transport;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -33,25 +34,7 @@ import java.util.Objects;
         this.marque = marque;
         this.matriculeV = matriculeV;
     }
-
-    public void setMatriculeV(int matriculeV) {
-        this.matriculeV = matriculeV;
-    }
-
-    public int getMatriculeV() {
-        return matriculeV;
-    }
-
-    public Vehicule(int id_vehicle, String type_vehicule, String marque) {
-        this.id_vehicle = id_vehicle;
-        this.type_vehicule = type_vehicule;
-        this.marque = marque;
-    }
-
-    public Vehicule(String type_vehicule, String marque) {
-        this.type_vehicule = type_vehicule;
-        this.marque = marque;
-    }
+   
 
     public int getId_vehicle() {
         return id_vehicle;
@@ -63,6 +46,9 @@ import java.util.Objects;
 
     public String getMarque() {
         return marque;
+    }
+     public int getMatriculeV() {
+        return matriculeV;
     }
 
     public void setId_vehicle(int id_vehicle) {
@@ -76,11 +62,15 @@ import java.util.Objects;
     public void setMarque(String marque) {
         this.marque = marque;
     }
+    public void setMatriculeV(int matriculeV) {
+        this.matriculeV = matriculeV;
+    }
 
     @Override
     public String toString() {
         return "Vehicule{" + "id_vehicle=" + id_vehicle + ", type_vehicule=" + type_vehicule + ", marque=" + marque + ", matriculeV=" + matriculeV + '}';
     }
+   
 
     @Override
     public int hashCode() {

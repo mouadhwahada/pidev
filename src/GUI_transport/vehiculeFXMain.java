@@ -25,7 +25,7 @@ public class vehiculeFXMain extends Application {
     @Override
     public void start(Stage primaryStage) {
        try {
-            Parent root = FXMLLoader.load(getClass().getResource("vehiculeFXML.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Louer un véhicule");
@@ -35,6 +35,45 @@ public class vehiculeFXMain extends Application {
             System.out.println(ex.getMessage());
     }
     }
+    
+    /*public void start(Stage primaryStage) {
+       try {
+            Parent root = FXMLLoader.load(getClass().getResource("ModVehiculeFXML.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Modifier un véhicule");
+            primaryStage.show();
+       
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+    }
+    }*/
+    
+    /*public void start(Stage primaryStage) {
+       try {
+            Parent root = FXMLLoader.load(getClass().getResource("AfficherVehiculeFXML.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Affiche véhicule");
+            primaryStage.show();
+       
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+    }
+    }*/
+    /*public void start(Stage primaryStage) {
+       try {
+            Parent root = FXMLLoader.load(getClass().getResource("ModVehiculeFXML.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Louer un véhicule");
+            primaryStage.show();
+       
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+    }
+    }*/
+    
 
     /**
      * @param args the command line arguments
