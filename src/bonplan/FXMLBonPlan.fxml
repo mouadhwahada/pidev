@@ -52,6 +52,6 @@
          </font>
       </Label>
       <Button fx:id="btnAddBonPlan" layoutX="150.0" layoutY="467.0" mnemonicParsing="false" onAction="#addBonPlan" prefHeight="51.0" prefWidth="150.0" text="ADD" />
-      <Button layoutX="400.0" layoutY="467.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" text="Return to home" />
+      <Button fx:id="btnReturnToHome" layoutX="400.0" layoutY="467.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="51.0" prefWidth="150.0" text="Return to home" />
    </children>
 </AnchorPane>

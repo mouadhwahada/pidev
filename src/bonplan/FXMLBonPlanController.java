@@ -4,16 +4,21 @@
  * and open the template in the editor.
  */
 package bonplan;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.BonPlan;
 import services.ServiceBonPLan;
 
@@ -40,6 +45,8 @@ public class FXMLBonPlanController implements Initializable {
     private Button btnAddBonPlan;
     
     ServiceBonPLan sbp=new ServiceBonPLan();
+    @FXML
+    private Button btnReturnToHome;
     /**
      * Initializes the controller class.
      */
@@ -60,6 +67,32 @@ public class FXMLBonPlanController implements Initializable {
     }
         
 
+    }
+
+    @FXML
+    private void returnToHome(ActionEvent event) {
+                        try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAfficherBonPlans.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 FXMLAfficherBonPlansController afficherBonPlansController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Home Entity BonPlan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnReturnToHome.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+            }
+        
     }
 
 }

@@ -154,6 +154,7 @@ public class FXMLAfficherBonPlansController implements Initializable {
             }catch(IOException ex){
                 ex.printStackTrace();
         
-    }}
+            }
+     }
     
 }

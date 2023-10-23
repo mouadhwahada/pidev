@@ -34,6 +34,8 @@ public class FXMLDeletionVerificationController implements Initializable {
     private Button btnDelete;
     
     services.ServiceBonPLan sbp;
+    @FXML
+    private Button btnReturnToHome;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -76,6 +78,31 @@ public class FXMLDeletionVerificationController implements Initializable {
          
         
     }
+
+    @FXML
+    private void returnToHome(ActionEvent event) {
+                    try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAfficherBonPlans.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 FXMLAfficherBonPlansController afficherBonPlansController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Home Entity BonPlan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnReturnToHome.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+        }
     
+    }
 }
 
