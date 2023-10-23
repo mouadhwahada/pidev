@@ -42,6 +42,8 @@ public class FXMLAfficherBonPlansController implements Initializable {
     ServiceBonPLan sbp= new ServiceBonPLan();
     @FXML
     private Button btnDeleteBonPlan;
+    @FXML
+    private Button btnAjouter;
 
     
     
@@ -129,5 +131,29 @@ public class FXMLAfficherBonPlansController implements Initializable {
         
         
     }
+
+    @FXML
+    private void ajouterBonPlan(ActionEvent event) {
+                try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLBonPlan.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 FXMLBonPlanController bonPlanController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage ajouterStage = new Stage();
+            ajouterStage.setScene(new Scene(root));
+            ajouterStage.setTitle("Ajouter un Bon Plan");
+            ajouterStage.show();
+            Stage currentStage = (Stage) btnAjouter.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+    }}
     
 }
