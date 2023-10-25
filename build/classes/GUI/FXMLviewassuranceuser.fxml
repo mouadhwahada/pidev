@@ -7,9 +7,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import java.net.URL?>
 
 <AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLviewassuranceuserController">
-   <children>
+   
+     <stylesheets> <URL value="@style.css" /> </stylesheets>
+    <children>
       <ImageView fitHeight="656.0" fitWidth="838.0" layoutX="-41.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />

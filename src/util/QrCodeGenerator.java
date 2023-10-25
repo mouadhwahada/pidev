@@ -79,6 +79,6 @@ public class QrCodeGenerator {
 
         System.out.println("\n\nYou have successfully created QR Code.");
         return true;  // Return true if QR code is generated and saved successfully
-    }=)
+    }
 
 }
