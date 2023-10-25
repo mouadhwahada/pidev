@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.AfficherCPController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <ListView fx:id="list" layoutX="131.0" layoutY="113.0" prefHeight="200.0" prefWidth="345.0" />
+      <Button fx:id="showbtn" layoutX="147.0" layoutY="326.0" mnemonicParsing="false" onAction="#show" text="Show" />
+      <Button fx:id="backbtn" layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#back" text="❰" />
+      <Button fx:id="addbtn" layoutX="244.0" layoutY="326.0" mnemonicParsing="false" onAction="#Add" text="Add" />
+      <ImageView fitHeight="104.0" fitWidth="104.0" layoutX="488.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@abc%20(1).png" />
+         </image>
+      </ImageView>
+      <Text fill="#1f0254" layoutX="217.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cupon Codes List" wrappingWidth="160.1875">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Text>
+      <Button fx:id="modifierbtn" layoutX="337.0" layoutY="326.0" mnemonicParsing="false" onAction="#modifiercp" prefHeight="43.0" prefWidth="85.0" text="Update" />
+      <Button fx:id="deletebtn" layoutX="434.0" layoutY="326.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+      <Button fx:id="qrcodebtn" layoutX="46.0" layoutY="326.0" mnemonicParsing="false" onAction="#qrCode" text="Qr Code" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.SignUpController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="tfnom" layoutX="274.0" layoutY="80.0" promptText="Enter Name" />
+      <TextField fx:id="tfprenom" layoutX="274.0" layoutY="129.0" promptText="Enter Surename" />
+      <TextField fx:id="tfemail" layoutX="275.0" layoutY="212.0" promptText="Enter Email" />
+      <TextField fx:id="tfpseudo" layoutX="274.0" layoutY="250.0" promptText="Enter Username" />
+      <PasswordField fx:id="pf" layoutX="274.0" layoutY="295.0" promptText="Enter Password" />
+      <Button fx:id="signupbtn" layoutX="256.0" layoutY="342.0" mnemonicParsing="false" onAction="#SignUp" text="Sign Up" />
+      <Button fx:id="backbtn" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" text="❰" />
+      <Label fx:id="successLabel" layoutX="470.0" layoutY="329.0" />
+      <TextField fx:id="tfcin" layoutX="274.0" layoutY="171.0" promptText="Enter CIN" />
+      <Label layoutX="182.0" layoutY="82.0" text="Name :" />
+      <Label layoutX="177.0" layoutY="129.0" text="Surename :" />
+      <Label layoutX="179.0" layoutY="172.0" text="CIN :" />
+      <Label layoutX="179.0" layoutY="212.0" text="Email :" />
+      <Label layoutX="179.0" layoutY="250.0" text="Username :" />
+      <Label layoutX="181.0" layoutY="295.0" text="Password :" />
+      <Text layoutX="141.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your information to create your account : ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="javafx.BarCodeController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="br_data" layoutX="129.0" layoutY="158.0" />
+      <TextField fx:id="br_path" layoutX="129.0" layoutY="248.0" />
+      <Label fx:id="barcode_read" layoutX="177.0" layoutY="310.0" text="Label" />
+      <Button fx:id="writebtn" layoutX="353.0" layoutY="153.0" mnemonicParsing="false" onAction="#writeCode" text="Write Code" />
+      <Button fx:id="readbtn" layoutX="354.0" layoutY="243.0" mnemonicParsing="false" onAction="#readCode" text="Read Code" />
+      <ImageView fitHeight="81.0" fitWidth="96.0" layoutX="491.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@abc%20(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backbtn" layoutX="22.0" layoutY="25.0" mnemonicParsing="false" onAction="#back" text="Go back" />
+   </children>
+</AnchorPane>
