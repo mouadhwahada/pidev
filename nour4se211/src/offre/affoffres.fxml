@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="offre.AffoffresController">
+    <stylesheets>
+        <URL value="@affoffres.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-4.0" layoutY="-4.0" prefHeight="659.0" prefWidth="1040.0">
+         <children>
+            <Label layoutX="264.0" layoutY="67.0" prefHeight="53.0" prefWidth="328.0" text="Liste des offres" textFill="#3b4697">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listo" layoutX="6.0" layoutY="233.0" prefHeight="313.0" prefWidth="687.0" />
+            <Button fx:id="retourlistoffres" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#retourlistoffres" prefHeight="53.0" prefWidth="75.0" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="26.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@return.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="813.0" prefHeight="659.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="147.0" fitWidth="197.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture%20d'écran%202023-10-17%20211648.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="28.0" layoutY="148.0" prefHeight="53.0" prefWidth="170.0" text="Explore X">
+               <font>
+                  <Font name="Impact" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="56.0" layoutX="94.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="28.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="offresaa" layoutX="21.0" layoutY="393.0" mnemonicParsing="false" onAction="#offresaa" prefHeight="53.0" prefWidth="185.0" text="Actulisier " />
+            <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="34.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@e48d6ed7786883203525e072287a6935_t.jpeg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Modifieroffre" layoutX="25.0" layoutY="466.0" mnemonicParsing="false" onAction="#Modifieroffre" prefHeight="53.0" prefWidth="185.0" text="Modifier" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="33.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@R%20(1).png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Supprimeroffre" layoutX="25.0" layoutY="539.0" mnemonicParsing="false" onAction="#Supprimeroffre" prefHeight="53.0" prefWidth="185.0" text="Supprimer" />
+            <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="36.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@627147.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="stat" layoutX="21.0" layoutY="307.0" mnemonicParsing="false" onAction="#stat" prefHeight="53.0" prefWidth="185.0" text="Statistique" />
+            <ImageView fitHeight="43.0" fitWidth="30.0" layoutX="32.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sastique.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

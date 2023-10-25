@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="offre.AdmineoffreespaceController">
+    <stylesheets>
+        <URL value="@admineoffreespace.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-7.0" layoutY="4.0" prefHeight="641.0" prefWidth="1022.0">
+         <children>
+            <ImageView fitHeight="189.0" fitWidth="150.0" layoutX="372.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@admine.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="admineservice" layoutX="338.0" layoutY="438.0" mnemonicParsing="false" onAction="#admineservice" prefHeight="53.0" prefWidth="249.0" text="Ajouter Service" AnchorPane.topAnchor="438.0" />
+            <Button fx:id="admineoffre" layoutX="338.0" layoutY="235.0" mnemonicParsing="false" onAction="#admineoffre" prefHeight="53.0" prefWidth="249.0" text="Ajouter Offre" />
+            <Button fx:id="adminelistoff" layoutX="338.0" layoutY="334.0" mnemonicParsing="false" onAction="#adminelistoff" prefHeight="53.0" prefWidth="249.0" text="consulter la liste des offres" />
+            <Button fx:id="adminelist" layoutX="338.0" layoutY="537.0" mnemonicParsing="false" onAction="#adminelist" prefHeight="53.0" prefWidth="249.0" text="consulter la liste des service" />
+            <Label layoutX="263.0" layoutY="164.0" text="Espace de Gestion" textFill="#494bdd">
+               <font>
+                  <Font name="Arial Black" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="menuHome" layoutX="40.0" layoutY="8.0" mnemonicParsing="false" onAction="#menuHome" prefHeight="43.0" prefWidth="67.0" />
+            <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="57.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="803.0" prefHeight="649.0" prefWidth="234.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture%20d'écran%202023-10-17%20211648.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="28.0" layoutY="148.0" prefHeight="53.0" prefWidth="170.0" text="Explore X">
+               <font>
+                  <Font name="Impact" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="35.0" fitWidth="56.0" layoutX="94.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
