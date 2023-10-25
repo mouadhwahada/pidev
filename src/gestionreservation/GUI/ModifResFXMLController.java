@@ -130,9 +130,9 @@ public class ModifResFXMLController implements Initializable {
         reservation.setNombrePersonnes(Integer.parseInt(nbprresmodif.getText()));
           reservation.setTypeHebergement(typeheberresmodif.getSelectionModel().getSelectedItem().toString());
        reservation.setTypeActivite(typeacresmodif.getSelectionModel().getSelectedItem().toString());
-        reservation.setReference(Integer.parseInt(cinclientresmodif.getText()));
+      
 
-           reservation.setReference(Integer.parseInt(referenceresmodif.getText()));
+           reservation.setNumtelephone(Integer.parseInt(referenceresmodif.getText()));
              if (validateDates(dateDebut, dateFin)) {
            serviceReservation.modifierReservation(reservation);
              }else{
@@ -198,8 +198,8 @@ public void setDateFin(String dateFin) {
         typeacresmodif.setValue(typeActivite);
     }
 
-    public void setReference(int reference) {
-        referenceresmodif.setText(String.valueOf(reference));
+    public void setNumtelephone(int numtel) {
+        referenceresmodif.setText(String.valueOf(numtel));
     }
 
     // Méthode pour gérer la sauvegarde des modifications
@@ -213,6 +213,9 @@ public void setDateFin(String dateFin) {
             stage.setScene(scene);
             stage.setTitle("La liste des réservations");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(AffichageReservationController.class.getName()).log(Level.SEVERE, null, ex);
         };
@@ -228,6 +231,9 @@ public void setDateFin(String dateFin) {
             stage.setScene(scene);
             stage.setTitle("Acceuil");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(AcceuilresController.class.getName()).log(Level.SEVERE, null, ex);
         };

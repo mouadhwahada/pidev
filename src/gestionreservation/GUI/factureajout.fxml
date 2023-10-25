@@ -28,12 +28,36 @@
                   <Font name="Impact" size="36.0" />
                </font>
             </Label>
-            <Button fx:id="conffacture" layoutX="72.0" layoutY="548.0" mnemonicParsing="false" onAction="#conffacture" prefHeight="71.0" prefWidth="180.0" text="Confirmer" />
+            <Button fx:id="conffacture" layoutX="61.0" layoutY="549.0" mnemonicParsing="false" onAction="#conffacture" prefHeight="66.0" prefWidth="214.0" text="Confirmer" />
             <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="80.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@white-nature-in-focus-wikimedia-commons-computer-icons-confirmation-thumbnail.jpg" />
                </image>
             </ImageView>
+            <Button fx:id="genererPDFButton" layoutX="65.0" layoutY="446.0" mnemonicParsing="false" onAction="#genererPDFButton" prefHeight="66.0" prefWidth="214.0" text="Générer Pdf" />
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="74.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pdf.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="envoyeremailfacture" layoutX="63.0" layoutY="350.0" mnemonicParsing="false" onAction="#envoyeremailfacture" prefHeight="66.0" prefWidth="214.0" text="Envoyer par Email">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@6557838.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="listfactaffiche" layoutX="59.0" layoutY="647.0" mnemonicParsing="false" onAction="#listfactaffiche" prefHeight="66.0" prefWidth="214.0" text="La list des factures">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@4901662.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="358.0" layoutY="52.0" />
@@ -57,7 +81,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="166.0" layoutY="525.0" text="Référence">
+      <Label layoutX="166.0" layoutY="525.0" text="Numéro Réservation">
          <font>
             <Font size="24.0" />
          </font>

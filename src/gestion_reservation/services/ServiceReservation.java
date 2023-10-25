@@ -33,7 +33,7 @@ public class ServiceReservation implements interface_reservation {
     @Override
     public void ajouterReservation(Reservation res) {
         try {
-            String req = "INSERT INTO `reservations`( `CinClient`, `nomclient`, `nombrePersonnes`, `dateDebut`, `dateFin`, `mode_paiement`, `typeHebergement`, `typeActivite`, `reference`) VALUES ('" +res.getCinClient() + "','" + res.getNomClient()+"','" + res.getNombrePersonnes()+ "','" + res.getDateDebut()+ "','"+ res.getDateFin() + "','" + res.getMode_paiement() +"','" + res.getTypeHebergement()+"','" + res.getTypeActivite()+"','" + res.getReference()+"')";
+            String req = "INSERT INTO `reservations`(`CinClient`, `nomClient`, `nombrePersonnes`, `dateDebut`, `dateFin`, `mode_paiement`, `typeHebergement`, `typeActivite`, `numtel`) VALUES ('" +res.getCinClient() + "','" + res.getNomClient()+"','" + res.getNombrePersonnes()+ "','" + res.getDateDebut()+ "','"+ res.getDateFin() + "','" + res.getMode_paiement() +"','" + res.getTypeHebergement()+"','" + res.getTypeActivite()+"','" + res.getNumtelephone()+"')";
             
             Statement stm = cnx.createStatement();
             stm.executeUpdate(req);
@@ -48,26 +48,26 @@ public class ServiceReservation implements interface_reservation {
     }
     
      public void modifierReservation(Reservation r) {
-         String req = "UPDATE `reservations` SET `CinClient`=?,`nomclient`=?,`nombrePersonnes`=?,`dateDebut`=?,`dateFin`=?,`mode_paiement`=?,`typeHebergement`=?,`typeActivite`=? WHERE `reference`=?";
+         String req = "UPDATE `reservations` SET `nomclient`=?,`nombrePersonnes`=?,`dateDebut`=?,`dateFin`=?,`mode_paiement`=?,`typeHebergement`=?,`typeActivite`=?,`numtel`=? WHERE `CinClient`=?";
     try {
         PreparedStatement ps = cnx.prepareStatement(req);
        
         
        
-        ps.setInt(1, r.getCinClient());
-        ps.setString(2, r.getNomClient());
-         ps.setInt(3, r.getNombrePersonnes());
-          ps.setDate(4, r.getDateDebut()); 
-        ps.setDate(5, r.getDateFin());
-        ps.setString(6, r.getMode_paiement());
-        ps.setString(7, r.getTypeHebergement());
-        ps.setString(8, r.getTypeActivite());
         
+        ps.setString(1, r.getNomClient());
+         ps.setInt(2, r.getNombrePersonnes());
+          ps.setDate(3, r.getDateDebut()); 
+        ps.setDate(4, r.getDateFin());
+        ps.setString(5, r.getMode_paiement());
+        ps.setString(6, r.getTypeHebergement());
+        ps.setString(7, r.getTypeActivite());
+        ps.setInt(8, r.getNumtelephone());
       
        
         // Assurez-vous d'obtenir l'ID de l'événement que vous souhaitez mettre à jour
        
-        ps.setInt(9, r.getReference());
+        ps.setInt(9, r.getCinClient());
         int res = ps.executeUpdate();
 
         if (res== 0) {
@@ -91,11 +91,11 @@ public class ServiceReservation implements interface_reservation {
      }
 
     @Override
-    public void supprimerReservation(int reference) {
+    public void supprimerReservation(int CinClient) {
        try{
-            String query ="DELETE FROM `reservations` WHERE `reference`=?";
+            String query ="DELETE FROM `reservations` WHERE `CinClient`=?";
            PreparedStatement  pst=cnx.prepareStatement(query);
-           pst.setInt(1, reference);
+           pst.setInt(1, CinClient);
            
            int r = pst.executeUpdate();
 
@@ -140,7 +140,7 @@ public class ServiceReservation implements interface_reservation {
          r.setMode_paiement("mode_paiement");
                                r.setTypeHebergement(rs1.getString("typeHebergement"));
                 r.setTypeActivite(rs1.getString("typeActivite"));
-       r.setReference(rs1.getInt("reference"));
+       r.setNumtelephone(rs1.getInt("numtel"));
         // Assurez-vous d'obtenir l'ID de l'événement que vous souhaitezs mettre à jour
        
        
@@ -156,5 +156,35 @@ public class ServiceReservation implements interface_reservation {
     }
     return reservations;
     }
- 
+ public int recupererIDReservationDepuisBaseDeDonnees() {
+    int idReservation = 0; // Initialisez l'ID à 0 (ou à une valeur par défaut)
+
+    // Code JDBC pour se connecter à votre base de données et exécuter une requête
+    try {
+        // Chargez le pilote JDBC (assurez-vous d'avoir la bibliothèque JDBC correspondante dans votre projet)
+
+        // Établissez une connexion à la base de données (remplacez les détails de connexion par les vôtres)
+        Connection cnx = Datasource.getInstance().getConnection();
+
+        // Créez une déclaration SQL
+        Statement statement = cnx.createStatement();
+
+        // Exécutez une requête SQL pour récupérer un ID existant (remplacez la requête par la vôtre)
+        String sqlQuery = "SELECT idReservation FROM `reservations` LIMIT 1"; // Exemple : récupère le premier ID de la table "reservations"
+        ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+        // Vérifiez s'il y a un résultat
+        if (resultSet.next()) {
+            idReservation = resultSet.getInt("idReservation");
+        }
+
+        // Fermez les ressources JDBC
+     
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return idReservation;
+}
+
 }

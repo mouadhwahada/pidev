@@ -25,12 +25,12 @@ public class Reservation {
     private String mode_paiement;
     private String typeHebergement;
     private String typeActivite;
-    private int reference;
+    private int numtelephone;
 
     public Reservation() {
     }
 
-    public Reservation(int idReservation, int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int reference) {
+    public Reservation(int idReservation, int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int numtelephone) {
         this.idReservation = idReservation;
         this.CinClient = CinClient;
         this.nomClient = nomClient;
@@ -40,10 +40,10 @@ public class Reservation {
         this.mode_paiement = mode_paiement;
         this.typeHebergement = typeHebergement;
         this.typeActivite = typeActivite;
-        this.reference = reference;
+        this.numtelephone = numtelephone;
     }
 
-    public Reservation(int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int reference) {
+    public Reservation(int CinClient, String nomClient, int nombrePersonnes, Date dateDebut, Date dateFin, String mode_paiement, String typeHebergement, String typeActivite, int numtelephone) {
         this.CinClient = CinClient;
         this.nomClient = nomClient;
         this.nombrePersonnes = nombrePersonnes;
@@ -52,7 +52,7 @@ public class Reservation {
         this.mode_paiement = mode_paiement;
         this.typeHebergement = typeHebergement;
         this.typeActivite = typeActivite;
-        this.reference = reference;
+        this.numtelephone = numtelephone;
     }
 
     public int getIdReservation() {
@@ -91,8 +91,8 @@ public class Reservation {
         return typeActivite;
     }
 
-    public int getReference() {
-        return reference;
+    public int getNumtelephone() {
+        return numtelephone;
     }
 
     public void setIdReservation(int idReservation) {
@@ -131,23 +131,23 @@ public class Reservation {
         this.typeActivite = typeActivite;
     }
 
-    public void setReference(int reference) {
-        this.reference = reference;
+    public void setNumtelephone(int numtelephone) {
+        this.numtelephone = numtelephone;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.idReservation;
-        hash = 97 * hash + this.CinClient;
-        hash = 97 * hash + Objects.hashCode(this.nomClient);
-        hash = 97 * hash + this.nombrePersonnes;
-        hash = 97 * hash + Objects.hashCode(this.dateDebut);
-        hash = 97 * hash + Objects.hashCode(this.dateFin);
-        hash = 97 * hash + Objects.hashCode(this.mode_paiement);
-        hash = 97 * hash + Objects.hashCode(this.typeHebergement);
-        hash = 97 * hash + Objects.hashCode(this.typeActivite);
-        hash = 97 * hash + Objects.hashCode(this.reference);
+        int hash = 5;
+        hash = 41 * hash + this.idReservation;
+        hash = 41 * hash + this.CinClient;
+        hash = 41 * hash + Objects.hashCode(this.nomClient);
+        hash = 41 * hash + this.nombrePersonnes;
+        hash = 41 * hash + Objects.hashCode(this.dateDebut);
+        hash = 41 * hash + Objects.hashCode(this.dateFin);
+        hash = 41 * hash + Objects.hashCode(this.mode_paiement);
+        hash = 41 * hash + Objects.hashCode(this.typeHebergement);
+        hash = 41 * hash + Objects.hashCode(this.typeActivite);
+        hash = 41 * hash + this.numtelephone;
         return hash;
     }
 
@@ -172,6 +172,9 @@ public class Reservation {
         if (this.nombrePersonnes != other.nombrePersonnes) {
             return false;
         }
+        if (this.numtelephone != other.numtelephone) {
+            return false;
+        }
         if (!Objects.equals(this.nomClient, other.nomClient)) {
             return false;
         }
@@ -182,9 +185,6 @@ public class Reservation {
             return false;
         }
         if (!Objects.equals(this.typeActivite, other.typeActivite)) {
-            return false;
-        }
-        if (!Objects.equals(this.reference, other.reference)) {
             return false;
         }
         if (!Objects.equals(this.dateDebut, other.dateDebut)) {
@@ -198,8 +198,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation{" + "idReservation=" + idReservation + ", CinClient=" + CinClient + ", nomClient=" + nomClient + ", nombrePersonnes=" + nombrePersonnes + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", mode_paiement=" + mode_paiement + ", typeHebergement=" + typeHebergement + ", typeActivite=" + typeActivite + ", reference=" + reference + '}';
+        return "Reservation{" + "idReservation=" + idReservation + ", CinClient=" + CinClient + ", nomClient=" + nomClient + ", nombrePersonnes=" + nombrePersonnes + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", mode_paiement=" + mode_paiement + ", typeHebergement=" + typeHebergement + ", typeActivite=" + typeActivite + ", numtelephone=" + numtelephone + '}';
     }
 
-    
 }

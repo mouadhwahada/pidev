@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionreservation.GUI.ModifResFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionreservation.GUI.ModifResFXMLController">
     <stylesheets>
         <URL value="@modifresfxml.css" />
     </stylesheets>
@@ -101,12 +101,12 @@
                      </font>
                   </Label>
                   <ComboBox fx:id="modepmodif" layoutX="244.0" layoutY="517.0" prefWidth="150.0" />
-                  <Label layoutX="538.0" layoutY="481.0" text="Référence">
+                  <Label layoutX="538.0" layoutY="481.0" text="Numéro de téléphone">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="referenceresmodif" layoutX="707.0" layoutY="476.0" prefHeight="31.0" prefWidth="155.0" />
+                  <TextField fx:id="referenceresmodif" layoutX="724.0" layoutY="476.0" prefHeight="31.0" prefWidth="138.0" />
                   <Button fx:id="returnaffiche" layoutX="814.0" layoutY="1.0" mnemonicParsing="false" onAction="#returnaffiche" prefHeight="62.0" prefWidth="68.0" style="-fx-background-color: #ffffff;">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">

@@ -28,28 +28,33 @@
     -fx-border-radius: 20;
     -fx-border-width: 3;
 }
+.resplus
+ {
+    fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-background-radius: 22;
+    -fx-border-radius: 20;
+    -fx-border-color: #FFB6C1;
+    -fx-border-width: 3;
+}
 * Style pour la ListView *
-/* Style pour la ListView */
-#listView {
-    -fx-background-color: #f0f0f0;
-    -fx-padding: 10;
-}
 
-/* Style pour les cellules */
 .list-cell {
-    -fx-background-color: #f9f9f9;
-    -fx-padding: 10 15 10 15;
-    -fx-border-width: 1;
-    -fx-border-color: #e0e0e0;
-    -fx-font-size: 16px;
-    -fx-text-fill: #333333;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 1);
-    -fx-alignment: center-left;
+    -fx-background-color: transparent; /* Fond transparent pour chaque élément de la liste */
+    -fx-padding: 10px;
     -fx-background-insets: 0;
+    -fx-text-fill: #333333; /* Couleur du texte */
+    -fx-font-size: 16; /* Taille de la police */
+    -fx-font-weight: bold; /* Texte en gras */
 }
 
-/* Style pour les cellules au survol de la souris */
-.list-cell:hover {
-    -fx-background-color: #e0e0e0;
-    -fx-background-insets: 0;
+.list-cell:selected {
+    -fx-background-color: transparent; /* Fond transparent pour les éléments sélectionnés */
+    -fx-text-fill: #ffffff; /* Couleur du texte pour les éléments sélectionnés */
 }
+
+.list-view {
+    -fx-background-color: transparent; /* Fond transparent pour la liste */
+}
+
+

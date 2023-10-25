@@ -27,8 +27,8 @@ public class ReservationFXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-      try {
-         Parent root = FXMLLoader.load(getClass().getResource("acceuilres.fxml"));
+     try {
+     /*    Parent root = FXMLLoader.load(getClass().getResource("acceuilres.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Acceuil");
@@ -37,9 +37,9 @@ public class ReservationFXMain extends Application {
         
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        }
+        }*/
            
-   /*  Parent root = FXMLLoader.load(getClass().getResource("factureajout.fxml"));
+   /*Parent root = FXMLLoader.load(getClass().getResource("affichageReservation.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Ajout Facture");
@@ -48,14 +48,14 @@ public class ReservationFXMain extends Application {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }*/
-  /*Parent root = FXMLLoader.load(getClass().getResource("factureaffichage.fxml"));
+  Parent root = FXMLLoader.load(getClass().getResource("factureaffichage.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Liste des factures");
             primaryStage.show();
         
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());}*/
+            System.out.println(ex.getMessage());}
    /*Parent root = FXMLLoader.load(getClass().getResource("modifresFXML.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -65,10 +65,10 @@ public class ReservationFXMain extends Application {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }*/
-  /*  Parent root = FXMLLoader.load(getClass().getResource("affichageReservation.fxml"));
+  /* Parent root = FXMLLoader.load(getClass().getResource("telechagerfacture.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Liste des réservations");
+            primaryStage.setTitle("pdf");
             primaryStage.show();
         
         } catch (IOException ex) {

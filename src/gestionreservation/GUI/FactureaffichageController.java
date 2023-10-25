@@ -10,7 +10,11 @@ import gestion_reservation.services.ServiceFacture;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -29,6 +33,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -54,6 +59,14 @@ public class FactureaffichageController implements Initializable {
     private Button acceuilres;
     @FXML
     private Button returnajout;
+    @FXML
+    private Button tricrfacture;
+    @FXML
+    private Button tridecfacture;
+    @FXML
+    private Button chercherfact;
+    @FXML
+    private TextField chercherfacture;
 
     /**
      * Initializes the controller class.
@@ -69,7 +82,7 @@ public class FactureaffichageController implements Initializable {
     for (Facture facture : factures) {
         String montantStr = "Montant : " + String.valueOf(facture.getMontant());
         String numStr = "Numéro de facture : " + String.valueOf(facture.getNumfacture());
-        String referenceStr = "Référence de la réservation associée : " + facture.getReservation().getReference();
+        String referenceStr = "numéro de la réservation associée : " + facture.getReservation().getIdReservation();
         String dateStr = "Date de paiement : " + facture.getDatePaiement();
         
         String factureString = montantStr + "\n" + numStr + "\n" + referenceStr + "\n" + dateStr;
@@ -157,8 +170,8 @@ for (String line : data) {
     } else if (line.startsWith("Montant :")) {
         double montant = Double.parseDouble(line.replace("Montant : ", "").trim());
         modifFactureController.setMontant(montant);
-    } else if (line.startsWith("Référence de la réservation associée :")) {
-        int reference = Integer.parseInt(line.replace("Référence de la réservation associée : ", "").trim());
+    } else if (line.startsWith("numéro de la réservation associée :")) {
+        int reference = Integer.parseInt(line.replace("numéro de la réservation associée : ", "").trim());
         modifFactureController.setReference(reference);
     } else if (line.startsWith("Date de paiement :")) {
         String datePaiement = line.replace("Date de paiement : ", "").trim();
@@ -169,6 +182,9 @@ for (String line : data) {
         // Faites de même pour les autres données (montant, référence, date de paiement, etc.)
 
         stage.show();
+         Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
     } catch (IOException e) {
         e.printStackTrace();
     }
@@ -185,7 +201,7 @@ for (String line : data) {
     for (Facture facture : factures) {
         String montantStr = "Montant : " + String.valueOf(facture.getMontant());
         String numStr = "Numéro de facture : " + String.valueOf(facture.getNumfacture());
-        String referenceStr = "Référence de la réservation associée : " + facture.getReservation().getReference();
+        String referenceStr = "Numéro de la réservation associée : " + facture.getReservation().getIdReservation();
         String dateStr = "Date de paiement : " + facture.getDatePaiement();
         
         String factureString = montantStr + "\n" + numStr + "\n" + referenceStr + "\n" + dateStr;
@@ -206,6 +222,9 @@ for (String line : data) {
             stage.setScene(scene);
             stage.setTitle("Acceuil");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(AcceuilresController.class.getName()).log(Level.SEVERE, null, ex);
         };
@@ -221,9 +240,83 @@ for (String line : data) {
             stage.setScene(scene);
             stage.setTitle("Ajout des factures");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(AcceuilresController.class.getName()).log(Level.SEVERE, null, ex);
         };
+    }
+
+@FXML
+private void tricrfacture(ActionEvent event) {
+    ObservableList<String> items = listfactures.getItems();
+    
+    Collections.sort(items, new Comparator<String>() {
+        @Override
+        public int compare(String facture1, String facture2) {
+            // Extrayez le montant de chaque facture
+            double montant1 = extractMontant(facture1);
+            double montant2 = extractMontant(facture2);
+            
+            // Comparez les montants
+            return Double.compare(montant1, montant2);
+        }
+    });
+}
+
+// Méthode pour extraire le montant de la chaîne factureString
+private double extractMontant(String factureString) {
+    int start = factureString.indexOf("Montant : ");
+    
+    if (start != -1) {
+        int end = factureString.indexOf('\n', start);
+        if (end != -1) {
+            // Extrait le montant
+            String montantStr = factureString.substring(start + 9, end);
+            return Double.parseDouble(montantStr);
+        }
+    }
+    
+    return 0.0; // Retourne 0.0 si le montant n'est pas trouvé
+}
+@FXML
+private void tridecfacture(ActionEvent event) {
+    ObservableList<String> items = listfactures.getItems();
+    
+    Collections.sort(items, new Comparator<String>() {
+        @Override
+        public int compare(String facture1, String facture2) {
+            double montant1 = extractMontant(facture1);
+            double montant2 = extractMontant(facture2);
+            
+            // Inversez l'ordre en changeant l'ordre des comparaisons
+            return Double.compare(montant2, montant1);
+        }
+    });
+}
+
+
+
+ 
+    
+
+    @FXML
+    private void chercherfact(ActionEvent event) {
+      String  cherfacture1= chercherfacture.getText().trim(); // Obtenez le CIN entré dans le TextField
+    ObservableList<String> resTrouvees1 = FXCollections.observableArrayList();
+
+    for (String facture : listfactures.getItems()) {
+        if (facture.contains("Numéro de facture : " + cherfacture1)) {
+            resTrouvees1.add(facture);
+        }
+    }
+
+    // Effacez le contenu précédent de Listereservation
+    listfactures.getItems().clear();
+
+    // Ajoutez les réservations trouvées à la ListView
+    listfactures.setItems(resTrouvees1);   
     }
 }
 

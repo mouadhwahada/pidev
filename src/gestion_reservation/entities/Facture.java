@@ -124,6 +124,12 @@ public class Facture {
         return "Facture{" + "idfacture=" + idfacture + ", numfacture=" + numfacture + ", montant=" + montant + ", datePaiement=" + datePaiement + ", Reservation=" + Reservation + '}';
     }
 
+    public Facture(int numfacture, String datePaiement, Reservation Reservation) {
+        this.numfacture = numfacture;
+        this.datePaiement = datePaiement;
+        this.Reservation = Reservation;
+    }
+
    
 
    

@@ -22,16 +22,20 @@ import javax.swing.JOptionPane;
  * @author pc
  */
 public class ServiceFacture implements interface_facture {
+
+    public static List<Reservation> getReservations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   Connection cnx = Datasource.getInstance().getConnection();
     @Override
     public void ajouterFacture(Facture f) {
          try {
-            String req = "INSERT INTO `facture`(`numfacture`,`montant_facture`, `date_paiement`,`refreservation`) VALUES  ('" + f.getNumfacture()+"','" + f.getMontant() +"','" + f.getDatePaiement()+ "','"+f.getReservation().getReference() + "')";
+            String req = "INSERT INTO `facture`(`numfacture`,`montant_facture`, `date_paiement`,`numRes`) VALUES  ('" + f.getNumfacture()+"','" + f.getMontant() +"','" + f.getDatePaiement()+ "','"+f.getReservation().getIdReservation() + "')";
             
             Statement stm = cnx.createStatement();
             stm.executeUpdate(req);
            JOptionPane.showMessageDialog(null,
-    "Votre réservation à été ajoutée avec succès!");
+    "Votre facture à été ajoutée avec succès!");
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null,
@@ -43,13 +47,13 @@ public class ServiceFacture implements interface_facture {
 
     @Override
     public void modifierFacture(Facture f) {
-    String req = "UPDATE `facture` SET `montant_facture`=?, `date_paiement`=?, `refreservation`=? WHERE `numfacture`=?";
+    String req = "UPDATE `facture` SET `montant_facture`=?, `date_paiement`=?, `numRes`=? WHERE `numfacture`=?";
     try {
         PreparedStatement ps = cnx.prepareStatement(req);
 
         ps.setDouble(1, f.getMontant());
         ps.setString(2, f.getDatePaiement());
-        ps.setInt(3, f.getReservation().getReference());
+        ps.setInt(3, f.getReservation().getIdReservation());
         ps.setInt(4, f.getNumfacture());
         
         int res = ps.executeUpdate();
@@ -142,9 +146,7 @@ public class ServiceFacture implements interface_facture {
     }
     return factures;
     }*/
-    String req = "SELECT f.numfacture, f.montant_facture, f.date_paiement, r.reference " +
-                "FROM facture f " +
-                "LEFT JOIN reservations r ON f.refreservation = r.reference";
+    String req = "SELECT * FROM facture";
     
     ArrayList<Facture> factures = new ArrayList<>();
     
@@ -160,7 +162,7 @@ public class ServiceFacture implements interface_facture {
             f.setDatePaiement(rs1.getString("date_paiement"));
             
             Reservation r = new Reservation();
-            r.setReference(rs1.getInt("reference"));
+            r.setIdReservation(rs1.getInt("numRes"));
             
             // Associez la réservation à la facture
             f.setReservation(r);

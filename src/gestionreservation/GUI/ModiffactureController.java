@@ -26,6 +26,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -62,21 +64,48 @@ public class ModiffactureController implements Initializable {
         
     }    
 
-    @FXML
-    private void buttsauvmodiffact(ActionEvent event) {
-           String numfact= numfactmodif.getText();
-        int numf =Integer.parseInt(numfact);
-         String montantfact= montantfactmodif.getText();
-        double Montantf=Double.parseDouble(montantfact);
+ @FXML
+private void buttsauvmodiffact(ActionEvent event) {
+    try {
+        // Récupérez les valeurs des champs depuis les composants graphiques
+        int numFacture = Integer.parseInt(numfactmodif.getText());
+        double montant = Double.parseDouble(montantfactmodif.getText());
+        int reference = Integer.parseInt(reffacturemodif.getText());
+        LocalDate datePaiement = datepmodiffacture.getValue();
+
+        // Créez une instance de Facture avec les modifications
+        Facture facture = new Facture();
+        
+        facture.setMontant(montant);
+        facture.setDatePaiement(datePaiement.toString());
+
+        // Créez une instance de Reservation associée à la Facture
+        Reservation reservation = new Reservation();
+        reservation.setIdReservation(reference);
+        facture.setReservation(reservation);
+        facture.setNumfacture(numFacture);
+
+        // Enregistrez la modification dans la base de données
         ServiceFacture sf = new ServiceFacture();
-        String reffacturemodif1= reffacturemodif.getText();
-        int reffact =Integer.parseInt(reffacturemodif1);
-        Reservation reserv=new Reservation();
-        reserv.setReference(reffact);
-      String datepaiement=datepmodiffacture.getValue().toString();
-        Facture f = new Facture(numf,Montantf,datepaiement,reserv);
-        sf.modifierFacture(f);
+        sf.modifierFacture(facture);
+
+        // Redirigez vers la page de liste des factures
+        Parent parent2 = FXMLLoader.load(getClass().getResource("factureaffichage.fxml"));
+        Scene scene = new Scene(parent2);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Liste des factures");
+        stage.show();
+
+        // Fermez la fenêtre de modification
+
+    } catch (NumberFormatException e) {
+        showAlert("Données non valides.", "Erreur", AlertType.ERROR);
+    } catch (IOException ex) {
+        Logger.getLogger(ModiffactureController.class.getName()).log(Level.SEVERE, null, ex);
     }
+}
+
  public void setNumFacture(int numFacture) {
         numfactmodif.setText(String.valueOf(numFacture));
     }
@@ -110,6 +139,9 @@ public class ModiffactureController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Acceuil");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(AcceuilresController.class.getName()).log(Level.SEVERE, null, ex);
         };
@@ -125,10 +157,22 @@ public class ModiffactureController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Liste des factures");
             stage.show();
+             Scene currentScene = ((Node) event.getSource()).getScene();
+            Stage currentStage = (Stage) currentScene.getWindow();
+            currentStage.close();
         }catch (IOException ex){
             Logger.getLogger(FactureaffichageController.class.getName()).log(Level.SEVERE, null, ex);
         };
     }
+
+    private void showAlert(String message, String title, AlertType alertType) {
+    Alert alert = new Alert(alertType);
+    alert.setTitle(title);
+    alert.setHeaderText(null); // Vous pouvez spécifier un en-tête si vous le souhaitez
+    alert.setContentText(message);
+    alert.showAndWait();
+}
+    
 }
 
     
