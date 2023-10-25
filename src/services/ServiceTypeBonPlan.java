@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import models.TypeBonPlan;
@@ -37,7 +38,7 @@ public class ServiceTypeBonPlan implements IServiceTypeBonPlan {
 
     }
 
-    @Override
+    /*@Override
     public List<TypeBonPlan> getAllTypeBonPlans() {
     String req = "SELECT * FROM `typebonplan`";
     List<TypeBonPlan> listTypeBonPlan = new ArrayList<>();
@@ -55,7 +56,31 @@ public class ServiceTypeBonPlan implements IServiceTypeBonPlan {
         ex.printStackTrace();
     }
     return listTypeBonPlan;
+    }*/
+    
+    public List<TypeBonPlan> getAllTypebonPlan(TypeBonPlan typeBonPlan){
+        String req ="SELECT * FROM  typebonplan";
+        ArrayList<TypeBonPlan> tbps=new ArrayList<>();
+        Statement stm;
+        try {
+            stm=this.cnx.createStatement();
+            ResultSet rs=stm.executeQuery(req);
+            while (rs.next()){
+                TypeBonPlan tbpt = new TypeBonPlan();
+                tbpt.setIdTypeBonPlan(rs.getInt("idTypeBonPlan"));
+                tbpt.setLocationBonPlan(rs.getString("locationBonPlan"));
+                tbpt.setTravelStyle(rs.getString("travelStyle"));
+                tbps.add(tbpt);
+                System.out.println("LoadedBonPlan"+tbpt.toString());
+                
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tbps;
     }
+    
 
     @Override
     public void deleteTypeBonPlan(TypeBonPlan tbp) {

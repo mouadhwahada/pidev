@@ -71,27 +71,6 @@ public class ServiceBonPLan implements IServiceBonPlan {
         }
     }
 
-    /*@Override
-    public List<BonPlan> getAllBonPlans() {
-        String req = "SELECT * FROM `bonplan`";
-    List<BonPlan> listBonPlans = new ArrayList<>();
-    try {
-        PreparedStatement st = cnx.prepareStatement(req);
-        ResultSet rs = st.executeQuery();
-        while (rs.next()) {
-            BonPlan bp = new BonPlan();
-            bp.setIdBonPlan(rs.getInt("idBonPlan"));
-            bp.setNameBonPlan(rs.getString("nameBonPlan"));
-            bp.setRating(rs.getFloat("rating"));
-            bp.setStartDate(rs.getDate("startDate"));
-            bp.setEndDate(rs.getDate("endDate"));
-            bp.setAvgPrice(rs.getFloat("avgPrice"));
-            listBonPlans.add(bp);        }
-        }catch (SQLException ex) {
-        ex.printStackTrace();
-    }
-    return listBonPlans;
-    }*/
     
     //from chatgpt: 
     @Override

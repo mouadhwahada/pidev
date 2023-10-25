@@ -62,7 +62,6 @@ public class FXMLAfficherBonPlansController implements Initializable {
     private void afficherbonPlans(ActionEvent event) {
         ObservableList<BonPlan> items = FXCollections.observableArrayList();
         List<BonPlan> bonPlans = sbp.getAll(new BonPlan());
-
         items.addAll(bonPlans);
         listBonPlans.setItems(items);
         

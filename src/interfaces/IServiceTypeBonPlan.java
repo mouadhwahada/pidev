@@ -14,8 +14,9 @@ import models.TypeBonPlan;
  */
 public interface IServiceTypeBonPlan {
         public void createTypeBonPlan(TypeBonPlan tbp);
-        public List<TypeBonPlan> getAllTypeBonPlans();
+        //public List<TypeBonPlan> getAllTypeBonPlans();
         public void deleteTypeBonPlan(TypeBonPlan tbp) ;
         public void updateTypeBonPlan(TypeBonPlan tbp);
+        List<TypeBonPlan> getAllTypebonPlan(TypeBonPlan typeBonPlan);
     
 }

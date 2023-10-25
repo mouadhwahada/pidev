@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/BonPlans.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLUpdateBonPlanController.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLAfficherBonPlansController.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLDeletionVerificationController.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/services/ServiceBonPLan.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLBonPlanController.java</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/FXMLDeletionVerification.fxml</file>
-            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/services/ServiceTypeBonPlan.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/TypeBonPlanModifierFXML.fxml</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/TypeBonPlanAfficherFXMLController.java</file>
+            <file>file:/C:/Users/MSADDAK/Desktop/final/BonPlan/src/bonplan/TypeBonPlanModifierFXMLController.java</file>
         </group>
     </open-files>
 </project-private>

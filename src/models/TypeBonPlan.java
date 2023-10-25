@@ -10,7 +10,7 @@ package models;
  * @author MSADDAK
  */
 public class TypeBonPlan {
-    private int idTypeBonPlan;
+    private Integer idTypeBonPlan;
     private String locationBonPlan;
     private String travelStyle;
 
