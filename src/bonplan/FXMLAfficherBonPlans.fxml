@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import java.net.URL?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.FXMLAfficherBonPlansController">
-   <children>
+   <stylesheets>
+        <URL value="@cass.css" />
+    </stylesheets>
+    <children>
       <Button fx:id="btnAfficher" layoutX="487.0" layoutY="61.0" mnemonicParsing="false" onAction="#afficherbonPlans" text="Afficher" />
       <Button fx:id="btnModifierBonPlan" layoutX="487.0" layoutY="134.0" mnemonicParsing="false" onAction="#modifierBonPlan" text="Modifier" />
       <ListView fx:id="listBonPlans" layoutX="23.0" layoutY="21.0" prefHeight="363.0" prefWidth="450.0" />

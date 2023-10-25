@@ -7,9 +7,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import java.net.URL?>
 
 <AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.FXMLBonPlanController">
-   <children>
+      <stylesheets>
+        <URL value="@cass.css" />
+    </stylesheets>
+    <children>
       <Label layoutX="120.0" layoutY="136.0" text="Name Of Bon Plan">
          <font>
             <Font name="Times New Roman" size="18.0" />

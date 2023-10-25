@@ -4,10 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import java.net.URL?>
 
 <AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="717.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="bonplan.HomePageGestionBonPlansController">
-   <children>
+      <stylesheets>
+        <URL value="@cass.css" />
+    </stylesheets>
+    <children>
       <Label layoutX="270.0" layoutY="28.0" prefHeight="94.0" prefWidth="177.0" text="Gestion Bon Plan">
          <font>
             <Font name="Times New Roman" size="24.0" />

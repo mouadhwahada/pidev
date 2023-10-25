@@ -5,9 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import java.net.URL?>
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.TypeBonPlanModifierFXMLController">
-   <children>
+      <stylesheets>
+        <URL value="@cass.css" />
+      </stylesheets>
+    <children>
       <Label layoutX="213.0" layoutY="24.0" text="Modifier Type bon Plan">
          <font>
             <Font name="Times New Roman" size="18.0" />
