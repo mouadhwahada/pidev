@@ -42,6 +42,10 @@ public class TypeBonPlanAfficherFXMLController implements Initializable {
     private Button btnAjouterTBP;
     @FXML
     private Button btnModifierTBP;
+    @FXML
+    private Button btnReturnToPrevious;
+    @FXML
+    private Button btnDeleteTypeBP;
 
 
     /**
@@ -118,5 +122,60 @@ public class TypeBonPlanAfficherFXMLController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void returnToPrevious(ActionEvent event) {
+         try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePageGestionBonPlans.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 HomePageGestionBonPlansController homePageGestionBonPlansController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Home Entity BonPlan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnReturnToPrevious.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+            }
     
+    }
+
+    @FXML
+    private void deleteBp(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeBonPlanDeleteFXML.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 TypeBonPlanDeleteFXMLController typeBonPlanDeleteFXMLController = loader.getController();
+
+                // Pass the selected user to the ModifierUser scene
+                typeBonPlanDeleteFXMLController.initData(selectedTbp);
+            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage modifierStage = new Stage();
+            modifierStage.setScene(new Scene(root));
+            modifierStage.setTitle("Supprimer Type Bon Plan ");
+
+            // Show the new stage
+            modifierStage.show();
+
+            // Close the current stage (AfficherUser)
+            Stage currentStage = (Stage) btnDeleteTypeBP.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

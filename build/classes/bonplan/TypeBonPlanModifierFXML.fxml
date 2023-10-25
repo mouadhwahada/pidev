@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="bonplan.TypeBonPlanModifierFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.TypeBonPlanModifierFXMLController">
    <children>
       <Label layoutX="213.0" layoutY="24.0" text="Modifier Type bon Plan">
          <font>
@@ -27,6 +26,11 @@
          </font>
       </Label>
       <Button fx:id="btnModifierTBP" layoutX="133.0" layoutY="312.0" mnemonicParsing="false" onAction="#modifierTBP" prefHeight="49.0" prefWidth="140.0" text="Modifier">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReturnToPrvPage" layoutX="312.0" layoutY="313.0" mnemonicParsing="false" onAction="#btnReturnToPrevPage" prefHeight="49.0" prefWidth="174.0" text="Return to Previous">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

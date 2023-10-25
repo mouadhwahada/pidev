@@ -16,74 +16,57 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import models.BonPlan;
+
 
 /**
  * FXML Controller class
  *
  * @author MSADDAK
  */
-public class FXMLDeletionVerificationController implements Initializable {
-    
+public class HomePageGestionBonPlansController implements Initializable {
+
+    @FXML
+    private Button btnGotToTypeBP;
+    @FXML
+    private Button btnGoToBP;
 
     /**
      * Initializes the controller class.
      */
-    BonPlan selectedBp=new BonPlan();
-    @FXML
-    private Button btnDelete;
-    
-    services.ServiceBonPLan sbp;
-    @FXML
-    private Button btnReturnToHome;
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       sbp=new services.ServiceBonPLan();
-    }  
-    
-        public void initData(BonPlan bp) {
-        // Receive the selected user data
-        selectedBp = bp;
-    }
-        
-
-    
-        
+        // TODO
+    }    
 
     @FXML
-    private void verifDeleteBonPlan(ActionEvent event) {
-         if (selectedBp!=null){
-         sbp.deleteBonPlan(selectedBp);
-        
-         try {
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAfficherBonPlans.fxml"));
+    private void goToTypeBP(ActionEvent event) {
+                              try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeBonPlanAfficherFXML.fxml"));
             Parent root = loader.load();
 
-          
-            Stage modifierStage = new Stage();
-            modifierStage.setScene(new Scene(root));
-            modifierStage.setTitle("Bons Plans List");
-
-          
-            modifierStage.show();
-
             
-            Stage currentStage = (Stage) btnDelete.getScene().getWindow();
+            // Get the controller of the ModifierUser scene
+                 TypeBonPlanAfficherFXMLController typeBonPlanAfficherFXMLController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Home Entity Type BonPlan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnGotToTypeBP.getScene().getWindow();
             currentStage.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        }
-         
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
         
+        }
+    
     }
 
     @FXML
-    private void returnToHome(ActionEvent event) {
-                    try {
-            // Load the ModifierUser.fxml file
+    private void goToBP(ActionEvent event) {
+            try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLAfficherBonPlans.fxml"));
             Parent root = loader.load();
 
@@ -96,7 +79,7 @@ public class FXMLDeletionVerificationController implements Initializable {
             homeStage.setScene(new Scene(root));
             homeStage.setTitle("Home Entity BonPlan");
             homeStage.show();
-            Stage currentStage = (Stage) btnReturnToHome.getScene().getWindow();
+            Stage currentStage = (Stage) btnGoToBP.getScene().getWindow();
             currentStage.close();
             
             }catch(IOException ex){
@@ -105,5 +88,5 @@ public class FXMLDeletionVerificationController implements Initializable {
         }
     
     }
+    
 }
-

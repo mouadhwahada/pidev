@@ -44,6 +44,8 @@ public class FXMLAfficherBonPlansController implements Initializable {
     private Button btnDeleteBonPlan;
     @FXML
     private Button btnAjouter;
+    @FXML
+    private Button btnReturnToPrevious;
 
     
     
@@ -101,7 +103,6 @@ public class FXMLAfficherBonPlansController implements Initializable {
     @FXML
     private void deleteBonPlan(ActionEvent event) {
         try {
-            // Load the ModifierUser.fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDeletionVerification.fxml"));
             Parent root = loader.load();
 
@@ -155,5 +156,30 @@ public class FXMLAfficherBonPlansController implements Initializable {
         
             }
      }
+
+    @FXML
+    private void returnToPrevious(ActionEvent event) {
+        try {
+            // Load the ModifierUser.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePageGestionBonPlans.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 HomePageGestionBonPlansController homePageGestionBonPlansController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Home Entity BonPlan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnReturnToPrevious.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+            }
+    }
     
 }

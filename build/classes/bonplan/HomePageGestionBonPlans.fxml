@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="717.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="bonplan.HomePageGestionBonPlansController">
+   <children>
+      <Label layoutX="270.0" layoutY="28.0" prefHeight="94.0" prefWidth="177.0" text="Gestion Bon Plan">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnGotToTypeBP" layoutX="100.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToTypeBP" prefHeight="80.0" prefWidth="240.0" text="Go To  Types de Bon Plans">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnGoToBP" layoutX="400.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToBP" prefHeight="80.0" prefWidth="240.0" text="Go To Bon Plans">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

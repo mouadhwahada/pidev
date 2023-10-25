@@ -13,9 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.TypeBonPlan;
 import services.ServiceTypeBonPlan;
@@ -25,57 +23,55 @@ import services.ServiceTypeBonPlan;
  *
  * @author MSADDAK
  */
-public class TypeBonPlanModifierFXMLController implements Initializable {
+public class TypeBonPlanDeleteFXMLController implements Initializable {
 
     @FXML
-    private TextField txtFieldLocation;
-    @FXML
-    private TextField txtFieldTravelStyle;
-    @FXML
-    private Button btnModifierTBP;
-    //instantiation de l'entité et du service
-    private TypeBonPlan selectedTypeBonPlan;
-    ServiceTypeBonPlan stbp=new ServiceTypeBonPlan();
+    private Button btnDeleteTypeBP;
     @FXML
     private Button btnReturnToPrvPage;
 
     /**
      * Initializes the controller class.
      */
+    TypeBonPlan selectedTbp= new TypeBonPlan();
+    ServiceTypeBonPlan stbp=new ServiceTypeBonPlan();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        if (selectedTypeBonPlan!=null){
-        txtFieldLocation.setText(selectedTypeBonPlan.getLocationBonPlan());
-        txtFieldTravelStyle.setText(selectedTypeBonPlan.getTravelStyle());
-        }
-        
-    }
+    }    
     public void initData(TypeBonPlan tbp){
-        selectedTypeBonPlan = tbp;
+    selectedTbp = tbp;
     }
-        
+
     @FXML
-    private void modifierTBP(ActionEvent event) {
-        if (selectedTypeBonPlan!=null){
-        selectedTypeBonPlan.setLocationBonPlan(txtFieldLocation.getText());
-        selectedTypeBonPlan.setTravelStyle(txtFieldTravelStyle.getText());
-        
-        stbp.updateTypeBonPlan(selectedTypeBonPlan);
-        }else{
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setContentText("Veuillez selectionner un type bon plan a modifier s'il vous plait");
-        alert.showAndWait();
-       
+    private void deleteTypeBp(ActionEvent event) {
+        if (selectedTbp != null){
+        stbp.deleteTypeBonPlan(selectedTbp);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeBonPlanAfficherFXML.fxml"));
+                Parent root = loader.load();
+
+          
+                Stage modifierStage = new Stage();
+                modifierStage.setScene(new Scene(root));
+                modifierStage.setTitle("Type Bons Plans List");
+
+          
+                modifierStage.show();
+
+            
+                Stage currentStage = (Stage) btnDeleteTypeBP.getScene().getWindow();
+                currentStage.close();
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        
-        
     }
 
     @FXML
     private void btnReturnToPrevPage(ActionEvent event) {
-                            try {
+                    try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeBonPlanAfficherFXML.fxml"));
                 Parent root = loader.load();
 
@@ -95,4 +91,5 @@ public class TypeBonPlanModifierFXMLController implements Initializable {
                 e.printStackTrace();
             }
     }
-}    
+    
+}

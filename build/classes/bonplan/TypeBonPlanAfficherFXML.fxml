@@ -23,12 +23,12 @@
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="565.0" layoutY="339.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="115.0" text="Delete">
+      <Button fx:id="btnDeleteTypeBP" layoutX="565.0" layoutY="339.0" mnemonicParsing="false" onAction="#deleteBp" prefHeight="49.0" prefWidth="115.0" text="Delete">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="543.0" layoutY="412.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="159.0" text="Return to Home ">
+      <Button fx:id="btnReturnToPrevious" layoutX="543.0" layoutY="412.0" mnemonicParsing="false" onAction="#returnToPrevious" prefHeight="49.0" prefWidth="159.0" text="Return to Previous">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

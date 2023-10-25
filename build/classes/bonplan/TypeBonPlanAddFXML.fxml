@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="bonplan.TypeBonPlanAddFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.TypeBonPlanAddFXMLController">
    <children>
       <Label layoutX="179.0" layoutY="14.0" prefHeight="54.0" prefWidth="242.0" text="Ajouter Type bon Plan " textAlignment="CENTER">
          <font>
@@ -27,6 +26,11 @@
       <TextField fx:id="txtFieldLocationTypeBonPlan" layoutX="222.0" layoutY="122.0" prefHeight="40.0" prefWidth="215.0" />
       <TextField fx:id="txtFieldTraveStyleTypeBonPlan" layoutX="222.0" layoutY="187.0" prefHeight="40.0" prefWidth="215.0" />
       <Button fx:id="btnAjouterTypeBonPlan" layoutX="106.0" layoutY="289.0" mnemonicParsing="false" onAction="#ajouterTypeBonPlan" prefHeight="54.0" prefWidth="138.0" text="Ajouter">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnReturnToPrevPage" layoutX="300.0" layoutY="289.0" mnemonicParsing="false" onAction="#btnReturnToPrevPage" prefHeight="54.0" prefWidth="174.0" text="Return To Previous">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
