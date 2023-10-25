@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="632.0" prefWidth="1345.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLajoutagenceController">
+   <children>
+      <ImageView fitHeight="632.0" fitWidth="1112.0" layoutX="-27.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="763.0" layoutY="33.0" mnemonicParsing="false" onAction="#gotoGestionCategorie" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Categorie">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="39.0" layoutY="33.0" mnemonicParsing="false" onAction="#gotoGestionAssurance" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Assurance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfnomagence" layoutX="419.0" layoutY="191.0" promptText="Nom agence">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfadresse" layoutX="622.0" layoutY="191.0" promptText="Adresse">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfemail" layoutX="419.0" layoutY="289.0" promptText="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tftelephone" layoutX="622.0" layoutY="289.0" promptText="Telephone">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="1132.0" layoutY="377.0" mnemonicParsing="false" onAction="#ajouterAgence" prefHeight="37.0" prefWidth="189.0" style="-fx-background-radius: 15;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1132.0" layoutY="461.0" mnemonicParsing="false" onAction="#modifierAgence" prefHeight="37.0" prefWidth="189.0" style="-fx-background-radius: 15;" text="Modifier">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1122.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/384542567_1390658981486004_2929377147759505743_n.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfid" layoutX="520.0" layoutY="117.0" promptText="ID" />
+   </children>
+</AnchorPane>

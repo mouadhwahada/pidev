@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="839.0" prefWidth="1425.0" style="-fx-background-color: #327599;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLgestionagenceController">
+   <children>
+      <ImageView fitHeight="938.0" fitWidth="1647.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />
+         </image>
+      </ImageView>
+      <ListView id="listView" fx:id="listAgence" layoutX="156.0" layoutY="130.0" prefHeight="530.0" prefWidth="735.0" />
+      <Button layoutX="1274.0" layoutY="562.0" mnemonicParsing="false" onAction="#supprimerAgence" prefHeight="57.0" prefWidth="227.0" style="-fx-background-radius: 15;" text="Supprimer" textFill="#1b1a1a">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="1127.0" layoutY="502.0" mnemonicParsing="false" onAction="#triAgence" prefHeight="30.0" prefWidth="70.0" text="Tri">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="1272.0" layoutY="31.0" mnemonicParsing="false" onAction="#gotoGestionCategorie" prefHeight="54.0" prefWidth="236.0" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Categorie">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="37.0" layoutY="23.0" mnemonicParsing="false" onAction="#gotoGestionAssurance" prefHeight="58.0" prefWidth="159.0" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Assurance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <TextField fx:id="tfrecherche" layoutX="302.0" layoutY="83.0" prefHeight="38.0" prefWidth="213.0" promptText="Recherche">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Button layoutX="1315.0" layoutY="401.0" mnemonicParsing="false" onAction="#gotoajouterAgence" prefHeight="43.0" prefWidth="152.0" style="-fx-background-radius: 15;" text="Ajouter" textFill="#262424">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1294.0" layoutY="474.0" mnemonicParsing="false" onAction="#gotoModifierAgence" prefHeight="53.0" prefWidth="190.0" style="-fx-background-radius: 15;" text="Modifier" textFill="#232222">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="720.0" layoutY="22.0" mnemonicParsing="false" onAction="#gotoGestionAgence" prefHeight="56.0" prefWidth="138.0" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Agence">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="199.0" fitWidth="271.0" layoutX="1261.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/384542567_1390658981486004_2929377147759505743_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

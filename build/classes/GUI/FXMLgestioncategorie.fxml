@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="798.0" prefWidth="1183.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLgestioncategorieController">
+   <children>
+      <ImageView fitHeight="948.0" fitWidth="1435.0" layoutX="-87.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />
+         </image>
+      </ImageView>
+      <ListView id="listView" fx:id="listcategorie" layoutX="168.0" layoutY="102.0" prefHeight="526.0" prefWidth="744.0" />
+      <Button layoutX="1190.0" layoutY="481.0" mnemonicParsing="false" onAction="#supprimerCategorie" style="-fx-background-radius: 15;" text="Supprimer">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <TextField fx:id="recherche" layoutX="376.0" layoutY="61.0" promptText="Recherche" />
+      <Button layoutX="1208.0" layoutY="529.0" mnemonicParsing="false" onAction="#triCategorie" prefHeight="26.0" prefWidth="65.0" text="Tri" />
+      <Button layoutX="1173.0" layoutY="23.0" mnemonicParsing="false" onAction="#gotoGestionAgence" style="-fx-background-color: #f7ffbd;" text="Gestion Agence">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="54.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGestionAssurance" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Assurance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button layoutX="549.0" layoutY="14.0" mnemonicParsing="false" onAction="#gotoGestionCategorie" style="-fx-background-radius: 15; -fx-background-color: #f7ffbd;" text="Gestion Categorie">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1198.0" layoutY="335.0" mnemonicParsing="false" onAction="#gotoajouterCategorie" style="-fx-background-radius: 15;" text="Ajouter" textFill="#262323">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="1193.0" layoutY="405.0" mnemonicParsing="false" onAction="#gotoModifierCategorie" style="-fx-background-radius: 15;" text="Modifier" textFill="#1e1d1d">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="179.0" fitWidth="200.0" layoutX="1115.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/384542567_1390658981486004_2929377147759505743_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

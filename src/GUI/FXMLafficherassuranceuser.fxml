@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="861.0" prefWidth="1345.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLafficherassuranceuserController">
+   <children>
+      <ImageView fitHeight="924.0" fitWidth="1649.0" layoutX="-29.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />
+         </image>
+      </ImageView>
+      <ListView id="listView" fx:id="listassurance" layoutX="158.0" layoutY="168.0" prefHeight="610.0" prefWidth="942.0" />
+      <TextField fx:id="tfrecherche" layoutX="481.0" layoutY="108.0" prefHeight="34.0" prefWidth="226.0" promptText="Recherche" />
+      <Button layoutX="1229.0" layoutY="450.0" mnemonicParsing="false" onAction="#triassurance" prefHeight="39.0" prefWidth="214.0" text="Tri" />
+      <Button layoutX="35.0" layoutY="44.0" mnemonicParsing="false" onAction="#retour" prefHeight="42.0" prefWidth="74.0" style="-fx-background-radius: 15;" text="Retour" />
+      <ImageView fitHeight="193.0" fitWidth="274.0" layoutX="1246.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/384542567_1390658981486004_2929377147759505743_n.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1231.0" layoutY="518.0" mnemonicParsing="false" onAction="#gotoviewassurance" prefHeight="39.0" prefWidth="214.0" text="Voir assurance" />
+   </children>
+</AnchorPane>

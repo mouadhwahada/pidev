@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="454.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLviewassuranceuserController">
+   <children>
+      <ImageView fitHeight="656.0" fitWidth="838.0" layoutX="-41.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/395314057_1047005556430635_7894324184087892473_n.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#6e2202" fontSmoothingType="LCD" layoutX="318.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assurance">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font></Text>
+      <Text layoutX="133.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie :" />
+      <Text layoutX="133.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agence :" />
+      <Text layoutX="204.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Agence :" />
+      <Text layoutX="204.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse :" />
+      <Text layoutX="204.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone :" />
+      <Text layoutX="204.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" />
+      <Text layoutX="133.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passeport :" />
+      <Text layoutX="133.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination :" />
+      <Text layoutX="147.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" />
+      <ImageView fx:id="qrcodeimg" fitHeight="149.0" fitWidth="183.0" layoutX="476.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="61.0" layoutY="22.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-radius: 15;" text="Retour">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Label fx:id="lcategorie" layoutX="218.0" layoutY="119.0" text="Label" />
+      <Label fx:id="lnomagence" layoutX="318.0" layoutY="188.0" text="Label" />
+      <Label fx:id="ladresseagence" layoutX="318.0" layoutY="229.0" text="Label" />
+      <Label fx:id="ltelagence" layoutX="318.0" layoutY="268.0" text="Label" />
+      <Label fx:id="lemailagence" layoutX="318.0" layoutY="309.0" text="Label" />
+      <Label fx:id="lpasseport" layoutX="232.0" layoutY="360.0" text="Label" />
+      <Label fx:id="ldestination" layoutX="232.0" layoutY="409.0" text="Label" />
+      <Label fx:id="ldate" layoutX="232.0" layoutY="451.0" text="Label" />
+   </children>
+</AnchorPane>
