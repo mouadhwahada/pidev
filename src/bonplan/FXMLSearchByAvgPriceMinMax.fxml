@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="461.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.FXMLSearchByAvgPriceMinMaxController">
+   <stylesheets>
+        <URL value="@cass.css" />
+    </stylesheets>
+    <children>
+      <Label layoutX="92.0" layoutY="14.0" prefHeight="38.0" prefWidth="150.0" text="Min. Average Price" />
+      <Label layoutX="263.0" layoutY="14.0" prefHeight="38.0" prefWidth="179.0" text="Max. Average Price" />
+      <TextField fx:id="minPriceField" layoutX="84.0" layoutY="52.0" prefHeight="32.0" prefWidth="110.0" />
+      <TextField fx:id="maxPriceField" layoutX="264.0" layoutY="52.0" prefHeight="32.0" prefWidth="110.0" />
+      <Button fx:id="searchButton" layoutX="390.0" layoutY="49.0" mnemonicParsing="false" onAction="#performSearch" prefHeight="38.0" prefWidth="102.0" text="Search">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ListView fx:id="resultsListView" layoutX="45.0" layoutY="106.0" prefHeight="318.0" prefWidth="550.0" />
+      <Button fx:id="btnReturnToHome" layoutX="501.0" layoutY="49.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="38.0" prefWidth="128.0" text="Return Home" />
+   </children>
+</AnchorPane>

@@ -107,5 +107,30 @@ public class ServiceTypeBonPlan implements IServiceTypeBonPlan {
         ex.printStackTrace();
     }
     }
+
+    @Override
+    public List<TypeBonPlan> searchBonPlanByAvgPrice(String location) {
+        List<TypeBonPlan> tbps=new ArrayList<>();   
+        String req=("SELECT * FROM typebonplan WHERE locationBonPlan=?");
+
+        try {
+            PreparedStatement ps=cnx.prepareStatement(req);
+            ps.setString(1, location);
+            ResultSet rs= ps.executeQuery();
+            while (rs.next()){
+                TypeBonPlan tbpt = new TypeBonPlan();
+            tbpt.setIdTypeBonPlan(rs.getInt("idTypeBonPlan"));
+            tbpt.setLocationBonPlan(rs.getString("locationBonPlan"));
+            tbpt.setTravelStyle(rs.getString("travelStyle"));
+            tbps.add(tbpt);
+                
+            
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tbps;
+    }
+    
     
 }

@@ -18,5 +18,7 @@ public interface IServiceTypeBonPlan {
         public void deleteTypeBonPlan(TypeBonPlan tbp) ;
         public void updateTypeBonPlan(TypeBonPlan tbp);
         List<TypeBonPlan> getAllTypebonPlan(TypeBonPlan typeBonPlan);
-    
+       public List<TypeBonPlan>searchBonPlanByAvgPrice(String location);
+       
+
 }

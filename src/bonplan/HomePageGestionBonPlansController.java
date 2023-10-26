@@ -29,6 +29,10 @@ public class HomePageGestionBonPlansController implements Initializable {
     private Button btnGotToTypeBP;
     @FXML
     private Button btnGoToBP;
+    @FXML
+    private Button btnSearchByAvgPrice;
+    @FXML
+    private Button btnSearchByLocation;
 
     /**
      * Initializes the controller class.
@@ -87,6 +91,55 @@ public class HomePageGestionBonPlansController implements Initializable {
         
         }
     
+    }
+
+    @FXML
+    private void RedirectToSearchByAvgPrice(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLSearchByAvgPriceMinMax.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 FXMLSearchByAvgPriceMinMaxController fXMLSearchByAvgPriceMinMaxController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Search By Avg Price Bon Plan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnSearchByAvgPrice.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+        }
+    
+    }
+
+    @FXML
+    private void redirectToSearchByLocation(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeBonPlanSearchByLocation.fxml"));
+            Parent root = loader.load();
+
+            
+            // Get the controller of the ModifierUser scene
+                 TypeBonPlanSearchByLocationController typeBonPlanSearchByLocationController = loader.getController();            
+            
+            // Create a new stage for the ModifierUser scene
+            Stage homeStage = new Stage();
+            homeStage.setScene(new Scene(root));
+            homeStage.setTitle("Search By Avg Price Bon Plan");
+            homeStage.show();
+            Stage currentStage = (Stage) btnSearchByLocation.getScene().getWindow();
+            currentStage.close();
+            
+            }catch(IOException ex){
+                ex.printStackTrace();
+        
+        }
     }
     
 }

@@ -95,7 +95,36 @@ public List<BonPlan> getAll(BonPlan bp) {
         }
     } catch (SQLException ex) {
         System.out.println(ex.getMessage());
-    }
+        }
     return bps;
-}
+    }
+    @Override
+    public List<BonPlan>searchBonPlanByAvgPrice(float minPrice, float maxPrice){
+        List<BonPlan> bps=new ArrayList<>();   
+        String req=("SELECT * FROM bonplan WHERE avgPrice >= ? AND avgPrice <= ?");
+
+        try {
+            PreparedStatement ps=cnx.prepareStatement(req);
+            ps.setFloat(1, minPrice);
+            ps.setFloat(2, maxPrice);
+            ResultSet rs= ps.executeQuery();
+            while (rs.next()){
+                BonPlan bpt = new BonPlan();
+            bpt.setIdBonPlan(rs.getInt("idBonPlan"));
+            bpt.setNameBonPlan(rs.getString("nameBonPlan"));
+            bpt.setRating(rs.getFloat("rating"));
+            bpt.setStartDate(rs.getDate("startDate"));
+            bpt.setEndDate(rs.getDate("endDate"));
+            bpt.setAvgPrice(rs.getFloat("avgPrice"));
+            bps.add(bpt);
+                
+            
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return bps;
+    
+    }
 }

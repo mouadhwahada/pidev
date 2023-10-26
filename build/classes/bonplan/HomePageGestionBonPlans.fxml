@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
 
-<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="717.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="bonplan.HomePageGestionBonPlansController">
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bonplan.HomePageGestionBonPlansController">
       <stylesheets>
         <URL value="@cass.css" />
     </stylesheets>
@@ -16,15 +16,17 @@
             <Font name="Times New Roman" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnGotToTypeBP" layoutX="100.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToTypeBP" prefHeight="80.0" prefWidth="240.0" text="Go To  Types de Bon Plans">
+      <Button fx:id="btnGotToTypeBP" layoutX="96.0" layoutY="129.0" mnemonicParsing="false" onAction="#goToTypeBP" prefHeight="80.0" prefWidth="240.0" text="Go To  Types de Bon Plans">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnGoToBP" layoutX="400.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToBP" prefHeight="80.0" prefWidth="240.0" text="Go To Bon Plans">
+      <Button fx:id="btnGoToBP" layoutX="394.0" layoutY="129.0" mnemonicParsing="false" onAction="#goToBP" prefHeight="80.0" prefWidth="240.0" text="Go To Bon Plans">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="btnSearchByAvgPrice" layoutX="394.0" layoutY="269.0" mnemonicParsing="false" onAction="#RedirectToSearchByAvgPrice" prefHeight="74.0" prefWidth="240.0" text="Search Bon Plan by Avg Price" />
+      <Button fx:id="btnSearchByLocation" layoutX="96.0" layoutY="274.0" mnemonicParsing="false" onAction="#redirectToSearchByLocation" prefHeight="80.0" prefWidth="240.0" text="Search Type Bon Plan by Location" />
    </children>
 </AnchorPane>

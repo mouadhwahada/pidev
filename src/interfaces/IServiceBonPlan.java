@@ -19,5 +19,7 @@ public interface IServiceBonPlan {
     //public List<BonPlan> getAllBonPlans();
         
    public List<BonPlan> getAll(BonPlan bp);
+   public List<BonPlan>searchBonPlanByAvgPrice(float minPrice, float maxPrice);
+   
 
 }
